@@ -1,0 +1,213 @@
+/* styles.css */
+.login_container {
+	width: 100%;
+	min-height: 100vh;
+	background-color: #f5f5f5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.logoutbtn{
+	position: absolute;
+	right: 190px;
+	top: 30px;
+	color:#3bb19b
+}
+
+.login_form_container {
+	width: 900px;
+	height: 500px;
+	display: flex;
+	border-radius: 10px;
+	box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+		0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+}
+
+.left {
+	flex: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.form_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.coolsee {
+  color: #f9f9f9;
+}
+
+
+.form_container h1 {
+	font-size: 40px;
+	margin-top: 100px;
+}
+
+.input {
+	outline: none;
+	border: none;
+	width: 370px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #edf5f3;
+	margin: 5px ;
+	font-size: 14px;
+}
+
+.error_msg {
+	width: 370px;
+	padding: 15px;
+	margin: 5px 0;
+	font-size: 14px;
+	background-color: #f34646;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #3bb19b;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.right h1 {
+	margin-top: 10px;
+	color: rgb(19, 1, 1);
+	font-size: 40px;
+	align-self: center;
+}
+
+.white_btn,
+.green_btn {
+	border: none;
+	outline: none;
+	padding: 12px 0;
+	background-color: white;
+	border-radius: 20px;
+	width: 180px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+/* Add this style in styles.module.css */
+.logo {
+	max-width: 100px; /* Adjust the width as needed */
+	height: auto;
+	margin-bottom: 20px; /* Adjust the margin as needed */
+  }
+  
+
+.green_btn {
+	background-color: #3bb19b;
+	color: white;
+	margin: 10px;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.founder-introduction {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #555;
+  margin-top: 20px;
+}
+
+p {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+ol {
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Add more styling as needed */
+.main_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Align items at the center horizontally */
+	justify-content: space-between; /* Add space between children elements */
+  }
+  
+  .navbar {
+	display: flex;
+	align-items: center; /* Align items at the center horizontally */
+	justify-content: space-between; /* Add space between children elements */
+	width: 100%;
+	padding: 0.5rem; /* Thin padding for mobile screens */
+	background-color: #1fd8aa; /* Professional blue color */
+	color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar_buttons {
+	display: flex;
+	align-items: center;
+	margin-left: 2rem;
+	margin-right: 2rem;
+  }
+  
+  /* Adjust button style for better visibility */
+  .navbar_button {
+	background-color: #fff; /* White background */
+	color: #023d11; /* Professional blue color for text */
+	border: 2px solid #021a08; /* Professional blue color border */
+	padding: 0.3rem 0.5rem; /* Adjust button padding for mobile */
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 2rem; /* Decrease font size for mobile */
+  }
+  
+  .navbar_button:hover {
+	background-color: #1142ac; /* Professional blue color on hover */
+	color: #fff; /* White text color on hover */
+  }
+  
+  /* Ensure responsiveness for smaller screens */
+  @media screen and (max-width: 768px) {
+	.navbar_buttons {
+	  flex-direction: column; /* Change to column layout on smaller screens */
+	  align-items: flex-start; /* Align buttons to the start */
+
+	
+	}
+	
+  
+	.navbar_button {
+	  margin-bottom: 0rem; /* Add space between vertically stacked buttons */
+	  height: 0%;
+	}
+  }
+  

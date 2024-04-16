@@ -1,0 +1,36 @@
+/* styles.module.css */
+
+.thank_you_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .thank_you_title {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  
+  .thank_you_message {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .back_to_home {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back_to_home:hover {
+    background-color: #45a049;
+  }
+  

@@ -1,0 +1,111 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 8vh;
+  background:#3bb19b;
+}
+.navybrand {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
+  position: left;
+  margin-left: 0;
+}
+
+.navybrand::before {
+  content: "";
+  position: left;
+  top: 0;
+  Right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #07a129; /* Set your background color */
+
+}
+
+
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+}
+.nav__toggler {
+  display: none;
+}
+.nav__toggler div {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: rgb(204, 204, 204);
+  transition: 0.3s ease-in;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__toggler {
+    display: block;
+    cursor: pointer;
+  }
+  .nav__menu {
+    position: fixed;
+    z-index: 11;
+    top: 7vh;
+    right: 0;
+    height: 70dvh;
+    width: 30vw;
+    background: rgba(2, 7, 12, 0.795);
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+  }
+}
+/* Active Class */
+.nav__active {
+  transform: translateX(0%);
+}
+
+/* Toggle Icon Animation */
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-4px, 5px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-4px, -5px);
+}
+
+.logo {
+  width: 6%;
+  height: auto;
+}
+
+/* Media query for screens smaller than 768px (adjust the value as needed) */
+@media (max-width: 768px) {
+  .logo {
+    width: 20%; /* Adjust the width for smaller screens */
+  }
+}

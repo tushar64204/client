@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/logo.png" />   
+     <!-- 
+        - primary meta tag
+      -->
+      <meta name="title" content="Discover the Magic of Numbers: Master Vedic Mathematics with Us!">
+      <meta name="description" content="This is an education html template made by codewithsadee">
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Numericveda</title>
+      <!-- 
+        - favicon
+      -->
+      <link rel="shortcut icon" href="./assets/images/NUMERICVEDAPNG.png" type="image/svg+xml">
+
+      <!-- contact link -->
+      <link rel="stylesheet" href="./assets/css/style.css">
+
+    
+    
+      <!-- 
+        - google font link
+      -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+       <script src="user.js"> 
+    
+      </script>
+    
+      <!-- 
+        - preload images
+      -->
+      <link rel="preload" as="image" href="./assets/images/hero-bg.svg">
+      <link rel="preload" as="image" href="./assets/images/hero-banner-1.jpg">
+      <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg">
+      <link rel="preload" as="image" href="./assets/images/phone.png">
+      <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
+    
+    <!-- whatsapp style -->
+    
+    <style>
+      /* Define the WhatsApp class with fixed position at the bottom right corner */
+      .whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 10;
+      }
+    </style>
+    
+    <style>
+     
+   
+      form {
+          background-color: #fff;
+          border-radius: 8px;
+          padding: 20px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          flex: 1;
+      }
+    
+      label {
+          display: block;
+          margin: 10px 0;
+          color: #333;
+      }
+    
+      input,
+      textarea {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+    
+      button {
+          background-color: #4caf50;
+          color: #fff;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+    
+      button:hover {
+          background-color: #45a049;
+      }
+    
+      
+  
+    </style>
+    
+    <!-- dropdown menu  -->
+    
+    <title>Programs - NumericVeda Institute</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .menu-container {
+            background-color: #7710ff;
+            overflow: hidden;
+        }
+    
+        .menu-container a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+    
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: rgb(7, 0, 0);
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+    
+        .menu-container a:hover, .dropdown:hover .dropbtn {
+            background-color: #473bf1;
+        }
+    
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+    
+        .dropdown-content a {
+            float: none;
+            color: rgb(0, 0, 0);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+    
+        .dropdown-content a:hover {
+            background-color: #3b57f7;
+        }
+    
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+  
+    
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <hr>
+    <style>
+      .slidingSlides {
+        display: none;
+        width: 100%;
+        height: auto; /* Adjust height to maintain aspect ratio */
+      }
+      hr {
+  border: none; /* Remove default border */
+  height: 4px; /* Set the height */
+  background-color: black; /* Set the color */
+  margin: 20px 0; /* Adjust margin as needed */
+}
+
+    
+      .sliding-container {
+        position: relative;
+        overflow: hidden; /* Ensure images don't overflow */
+      }
+    
+      .sliding-center {
+        position: absolute;
+        bottom: 10px; /* Adjust as needed */
+        width: 100%;
+        text-align: center;
+      }
+    
+      .slide-left,
+      .slide-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white; /* Ensure visibility */
+      }
+    
+      .slide-left {
+        left: 10px; /* Adjust as needed */
+      }
+    
+      .slide-right {
+        right: 10px; /* Adjust as needed */
+      }
+    
+      .slide-badge {
+        display: inline-block;
+        height: 13px;
+        width: 13px;
+        margin: 0 5px; /* Adjust spacing */
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid white; /* Add border for visibility */
+        border-radius: 50%; /* Make it circular */
+      }
+    
+      .slide-badge.active {
+        background-color: white;
+      }
+    </style>
+    
+    <div class="sliding-container" style="max-width: 100vw;">
+      <img class="slidingSlides" src="./readme-images/banner4.png">
+      <img class="slidingSlides" src="./readme-images/banner3.png">
+      <img class="slidingSlides" src="./readme-images/banner2.png">
+      <img class="slidingSlides" src="./readme-images/banner1.png">
+    
+      <div class="sliding-center sliding-large sliding-text-white">
+        <div class="slide-left slide-hover-text-khaki" onclick="plusSlides(-1)">&#10094;</div>
+        <div class="slide-right slide-hover-text-khaki" onclick="plusSlides(1)">&#10095;</div>
+        <span class="slide-badge" onclick="currentSlide(1)"></span>
+        <span class="slide-badge" onclick="currentSlide(2)"></span>
+        <span class="slide-badge" onclick="currentSlide(3)"></span>
+        <span class="slide-badge" onclick="currentSlide(4)"></span>
+      </div>
+    </div>
+    
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+    
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+    
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+    
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slidingSlides");
+        var dots = document.getElementsByClassName("slide-badge");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].classList.remove("active");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active");
+      }
+    
+      // Auto play the slideshow
+      var slideInterval = setInterval(function () {
+        plusSlides(1);
+      }, 7000); // Change 2000 to the desired interval in milliseconds (e.g., 3000 for 3 seconds)
+    </script>
+    
+
+<!-- anouncement -->
+<style>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.announcement-bar {
+  background-color: #000000;
+  color: #fdfdfd;
+  padding: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  animation: slide 20s linear infinite;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+@keyframes slide {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(-100%);
+  }
+  75% {
+      transform: translateX(-100%);
+  }
+}
+</style>
+    
+<div class="announcement-bar">
+  <div class="slider">
+      <div class="slide"><a href="/Login" target="_blank"> 📢Free demo workshop on Saturday! Ragister now.📌</a></div>
+      <div class="slide"><a href="https://example.com/announcement2" target="_blank"> 📑Free book content: PDF. click here!📌</a></div>
+      <div class="slide"><a href="https://example.com/announcement3" target="_blank"> 🥇Know about our content details by just clicking here!📌</a></div>
+  </div>
+</div>
+
+
+  <div class="container">
+
+    <nav class="navbar" data-navbar>
+
+      
+      </div>
+
+      <ul class="navbar-list">
+
+        <a href="/Login" target="_blank" class="btn">Book Your Class</a>
+    
+        <li class="dropdown"><a href="./aboutus.html" target="_blank" class="dropbtn">About</a></li>
+    
+        <li class="dropdown"><a href="./message.html" target="_blank" class="dropbtn">messageUs</a></li>
+    
+        <li class="dropdown"><a href="./gallery.html" target="_blank" class="dropbtn">Gallery</a></li>
+    
+        <li class="dropdown">
+            <a class="dropbtn">Programs</a>
+            <div class="dropdown-content">
+                
+                
+                <a href="./schedule.html" target="_blank">Live Learning Programs</a>
+                <a href="./course.html" target="_blank">Certification Courses</a>
+            </div>
+        </li>
+    
+        <li class="dropdown"><a href="./vedicmaths.html" target="_blank" class="dropbtn">Textbooks</a>
+    
+        <li class="dropdown"><a href="./Journals.html" target="_blank" class="dropbtn">Journal</a></li>
+    
+        <!-- Add other menu items here -->
+    
+    </ul>
+    
+    
+    </nav>      
+    
+
+    
+    
+      <!-- 
+        - #HEADER
+      -->
+    
+      
+    
+    
+    
+    
+    
+      <main>
+        <article>
+    
+          <!-- 
+            - #HERO
+          -->
+    
+          <section class="section hero has-bg-image" id="home" aria-label="home"
+            style="background-image: url('./assets/images/hero-bg.svg')">
+            <div class="container">
+    
+              <div class="hero-content">
+    
+                <h4 class="h1 section-title">
+                  Discover the  <span class="span">Magic</span> of Numbers
+                </h4>
+    
+                <p class="hero-text">
+                  Master Vedic Mathematics with Us!
+                </p>
+    
+                <a href="/course.html" class="btn has-before">
+                  <span class="span">Find free courses</span>
+    
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+    
+              </div>
+    
+              <figure class="hero-banner">
+    
+                <div class="img-holder one" style="--width: 270; --height: 300;">
+                  <img src="./assets/images/hero-banner-1.jpg" width="270" height="300" alt="hero banner" class="img-cover">
+                </div>
+    
+                <div class="img-holder two" style="--width: 240; --height: 370;">
+                  <img src="./assets/images/hero-banner-2.jpg" width="240" height="370" alt="hero banner" class="img-cover">
+                </div>
+    
+                <img src="./assets/images/hero-shape-2.png" width="622" height="551" alt="" class="shape hero-shape-2">
+                <img src="./assets/images/phone.png" width="500" height="900" alt="" class="shape hero-shape-1">
+    
+              </figure>
+    
+            </div>
+          </section>
+  
+  
+    
+          <!-- 
+            - #CATEGORY
+          -->
+    
+          <section class="section category" aria-label="category">
+            <div class="container">
+    
+              <p class="section-subtitle">Categories</p>
+    
+              <h2 class="h2 section-title">
+                Vedic Maths <span class="span">Courses  </span>
+              </h2>
+    
+              <p class="section-text">
+                Unlock the power of ancient mathematics techniques!
+              </p>
+    
+              <ul class="grid-list">
+    
+                <li>
+                  <div class="category-card" style="--color: 170, 75%, 41%">
+    
+                    <div class="card-icon">
+                      <img src="./assets/images/category-1.svg" width="40" height="40" loading="lazy"
+                        alt="Online certification Programs" class="img">
+                    </div>
+    
+                    <h3 class="h3">
+                      <a href="#" class="card-title">Online certification Programs</a>
+                    </h3>
+    
+                    <p class="card-text">
+                      Unlock Success Online: Vedic Math Certification Course! Dive into General Aptitude and Math Excellence
+                    </p>
+    
+                    <span class="card-badge">8 hours</span>
+    
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="category-card" style="--color: 351, 83%, 61%">
+    
+                    <div class="card-icon">
+                      <img src="./assets/images/category-2.svg" width="40" height="40" loading="lazy"
+                        alt="Introduction to Vedic Maths" class="img">
+                    </div>
+    
+                    <h3 class="h3">
+                      <a href="#" class="card-title">Introduction to Vedic Maths</a>
+                    </h3>
+    
+                    <p class="card-text">
+                      Learn the fundamentals of Vedic Mathematics and improve your mental calculation skills.
+                    </p>
+    
+                    <span class="card-badge">Duration: 4 weeks</span>
+    
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="category-card" style="--color: 229, 75%, 58%">
+    
+                    <div class="card-icon">
+                      <img src="./assets/images/category-3.svg" width="40" height="40" loading="lazy"
+                        alt="Advanced Vedic Maths Techniques" class="img">
+                    </div>
+    
+                    <h3 class="h3">
+                      <a href="#" class="card-title">Advanced Vedic Maths Techniques</a>
+                    </h3>
+    
+                    <p class="card-text">
+                      Master advanced techniques for faster calculations, including multiplication, division, and square roots.
+                    </p>
+    
+                    <span class="card-badge">Duration: 12 weeks</span>
+    
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="category-card" style="--color: 42, 94%, 55%">
+    
+                    <div class="card-icon">
+                      <img src="./assets/images/category-4.svg" width="40" height="40" loading="lazy"
+                        alt="Crack Govt Exams with Ease: Vedic Math Mastery Course!" class="img">
+                    </div>
+    
+
+
+
+
+
+                    <h3 class="h3">
+                      <a href="#" class="card-title">Crack Govt Exams with Ease: Vedic Math Mastery Course!</a>
+                    </h3>
+    
+                    <p class="card-text">
+                      Elevate Your General Aptitude and Math Skills for Success in Competitive Government Exams.
+                    </p>
+    
+                    <span class="card-badge">4 weeks</span>
+    
+                  </div> 
+                </li>
+    
+              </ul>
+    
+            </div>
+          </section>
+    
+    <!-- quiz -->
+    <div class="quizbody">
+      <h2>Let us help you to select the perfect course for you</h2>
+      <h1>Total 10 quetions, each has 30 sec. Time Duration.</h1>
+      <div id="quiz-container">
+          <div id="timer">Time Left: <span id="time">30</span> seconds</div>
+          <div id="question-container" class="question"></div>
+          <div id="options-container" class="options"></div>
+          <button id="submit-btn" onclick="submitQuiz()" style="display: none;">Submit</button>
+          <button id="next-btn" onclick="nextQuestion()" style="display: none;">Next Question</button>
+      </div>
+  
+      <div id="result-container" style="display: none;">
+          <h2>Quiz Result</h2>
+          <p id="result"></p>
+          <button onclick="navigateToResultPage()">View Detailed Results</button>
+      </div>
+  
+      <script>
+          const quizData = [
+              {
+                  question: "What is the result of multiplying 9 by 0?",
+                  options: ["a) 0", "b) 9", "c) 18", "d) 81"],
+                  correctAnswer: 0,
+                  score: 4.545454545454546,
+              },
+              // Add more quiz data here...
+              {
+    question: "What is the product of 11 and 12?",
+    options: ["a) 122", "b) 132", "c) 142", "d) 152"],
+    correctAnswer: 1,
+    score: 4.545454545454546,
+  },
+  {
+    question: "If 35 is divided by 7, what is the quotient?",
+    options: ["a) 4", "b) 5", "c) 6", "d) 7"],
+    correctAnswer: 1,
+    score: 9.090909090909092,
+  },
+  {
+    question: "What is the square of 23?",
+    options: ["a) 413", "b) 483", "c) 529", "d) 576"],
+    correctAnswer: 2,
+    score: 9.090909090909092,
+  },
+  {
+    question: "If a number is increased by 20% and then decreased by 20%, what is the net change?",
+    options: ["a) 0%", "b) 2%", "c) 4%", "d) 8%"],
+    correctAnswer: 0,
+    score: 9.090909090909092,
+  },
+  {
+    question: "Solve: (45 * 45) + (45 * 55)",
+    options: ["a) 4500", "b) 4950", "c) 5000", "d) 5500"],
+    correctAnswer: 3,
+    score: 9.090909090909092,
+  },
+  {
+    question: "In the Bhagavad Gita, Lord Krishna mentions a concept that can be related to finding the least common multiple (LCM) in modern mathematics. What is this concept?",
+    options: ["a) Karma Yoga", "b) Dharma", "c) Yajna", "d) Yuga"],
+    correctAnswer: 3,
+    score: 13.636363636363637,
+  },
+  {
+    question: "The ancient Indian mathematician Brahmagupta introduced a rule that can be related to solving quadratic equations. What is this rule called?",
+    options: ["a) Sutra Siddhanta", "b) Brahmasphutasiddhanta", "c) Bijaganita", "d) Shulba Sutras"],
+    correctAnswer: 2,
+    score: 13.636363636363637,
+  },
+  {
+    question: "The Vedic math technique called 'Nikhilam Navatashcaramam Dashatah' is equivalent to which modern mathematical operation?",
+    options: ["a) Division", "b) Multiplication", "c) Square Root", "d) Addition"],
+    correctAnswer: 1,
+    score: 13.636363636363637,
+  },
+  {
+    question: "In the Rigveda, there is a reference to a numerical pattern similar to the Fibonacci sequence. What is this pattern known as in Vedic math?",
+    options: ["a) Pratyayasankhya", "b) Amshasankhya", "c) Shunyasankhya", "d) Padavinyasa"],
+    correctAnswer: 1,
+    score: 13.636363636363637,
+  },
+              {
+                  question: "whold you like to rate this quiz between  1 and 5?",
+                  options: ["1", "2", "3", "4"  , "5"],
+                  correctAnswer: 3,
+                  score: 0,
+              }
+          ];
+  
+          let currentQuestion = 0;
+          let timeLeft = 30; // Adjusted time for testing
+          let timerInterval;
+          let totalScore = 0;
+          let quizSubmitted = false;
+  
+          function startTimer() {
+              timerInterval = setInterval(function () {
+                  document.getElementById('time').textContent = timeLeft;
+                  timeLeft--;
+  
+                  if (timeLeft < 0) {
+                      clearInterval(timerInterval);
+                      submitQuiz();
+                  }
+              }, 1000);
+          }
+  
+          function displayQuestion() {
+    const questionContainer = document.getElementById('question-container');
+    const optionsContainer = document.getElementById('options-container');
+    const currentQuizData = quizData[currentQuestion];
+
+    questionContainer.textContent = currentQuizData.question;
+    optionsContainer.innerHTML = '';
+
+    currentQuizData.options.forEach((option, index) => {
+        const optionElement = document.createElement('div');
+        optionElement.className = 'option';
+        optionElement.textContent = option;
+        optionElement.setAttribute('data-index', index);
+        optionElement.addEventListener('click', () => selectOption(index));
+        optionsContainer.appendChild(optionElement);
+    });
+
+    document.getElementById('submit-btn').style.display = 'none';
+    document.getElementById('next-btn').style.display = 'none';
+}
+
+              // Function body remains the same
+
+  
+          function selectOption(selectedIndex) {
+    if (!quizSubmitted) {
+        const options = document.querySelectorAll('.option');
+        options.forEach(option => option.classList.remove('selected'));
+        options[selectedIndex].classList.add('selected');
+        document.getElementById('submit-btn').style.display = 'block';
+    }
+}
+
+          
+          
+  
+          function submitQuiz() {
+              clearInterval(timerInterval);
+              quizSubmitted = true;
+  
+              const selectedOptions = document.querySelectorAll('.option.selected');
+              let isCorrect = false;
+  
+              selectedOptions.forEach((selectedOption) => {
+                  const userAnswerIndex = selectedOption.getAttribute('data-index');
+                  isCorrect = userAnswerIndex === quizData[currentQuestion].correctAnswer.toString();
+                  totalScore += isCorrect ? quizData[currentQuestion].score : 0;
+              });
+  
+              // Ensure that if there are no selected options, the score doesn't get incremented
+              if (selectedOptions.length === 0) {
+                  totalScore += 0;
+              }
+  
+              if (currentQuestion === quizData.length - 1) {
+                  // Cap the total score at 100
+                  totalScore = Math.min(totalScore, 100);
+                  document.getElementById('result').textContent = `Your score: ${totalScore.toFixed(2)} / 100`; // Display score out of 100
+                  document.getElementById('result-container').style.display = 'block';
+                  document.getElementById('next-btn').style.display = 'none';
+                  document.getElementById('submit-btn').style.display = 'none';
+              } else {
+                  document.getElementById('next-btn').style.display = 'block';
+                  document.getElementById('submit-btn').style.display = 'none';
+                  quizSubmitted = false;
+              }
+          }
+  
+          function nextQuestion() {
+    if (currentQuestion < quizData.length - 1) {
+        currentQuestion++;
+        timeLeft = 30; // Reset the timer for the next question
+        startTimer(); // Restart the timer for the next question
+        displayQuestion(); // Display the next question
+        document.getElementById('next-btn').style.display = 'none'; // Hide the "Next Question" button
+    } else {
+        // If it's the last question, show the "Submit" button
+        document.getElementById('submit-btn').style.display = 'block';
+        document.getElementById('next-btn').style.display = 'none'; // Hide the "Next Question" button
+    }
+}
+
+          
+  
+          function navigateToResultPage() {
+              // Pass the total score to the result page as a parameter
+              window.location.href = `./result.html?score=${totalScore.toFixed(2)}`;
+              alert('Remember your score');
+          }
+  
+          startTimer();
+          displayQuestion();
+      </script>
+  </div>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+    
+          <!-- 
+            - #ABOUT
+          -->
+    
+          <section class="section about" id="about" aria-label="about">
+            <div class="container">
+    
+              <figure class="about-banner">
+    
+                <div class="img-holder" style="--width: 520; --height: 370;">
+                  <img src="./assets/images/NUMERICVEDAPNG.png" width="400" height="400" loading="lazy" alt="NUMERIC VEDA"
+                    class="img-cover">
+                </div>
+    
+                <img src="./assets/images/sir.png" width="250" height="420" loading="lazy" alt=""
+                  class="shape about-shape-1">
+    
+                <img src="./assets/images/about-shape-2.svg" width="371" height="220" loading="lazy" alt=""
+                  class="shape about-shape-2">
+    
+                <img src="./assets/images/about-shape-3.png" width="722" height="528" loading="lazy" alt=""
+                  class="shape about-shape-3">
+    
+              </figure>
+    
+              <div class="about-content">
+    
+                <p class="section-subtitle">About Us</p>
+    
+                <h2 class="h2 section-title">
+                  A <span class="span">Decade </span> Dedicated to Vedic Wisdom
+                </h2>
+    
+                <p class="section-text">
+               
+                Dr. Rakesh Bhatia, a revered expert in Vedic Maths, has dedicated a decade to transforming
+                mathematical learning. His expertise and commitment shine through personalized teaching, shaping a generation of confident and adept mathematicians.
+                </p>
+    
+                <ul class="about-list">
+    
+                  <li class="about-item">
+                    <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+    
+                    <span class="span">Expert Trainers</span>
+                  </li>
+    
+                  <li class="about-item">
+                    <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+    
+                    <span class="span">Online Remote Learning</span>
+                  </li>
+    
+                  <li class="about-item">
+                    <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+    
+                    <span class="span">Live classes</span>
+                  </li>
+    
+                </ul>
+    
+                <img src="./assets/images/about-shape-4.svg" width="100" height="100" loading="lazy" alt=""
+                  class="shape about-shape-4">
+    
+              </div>
+    
+            </div>
+          </section>
+    
+    
+    
+    
+    
+          <!-- 
+            - #COURSE
+          -->
+    
+          <section class="section course" id="courses" aria-label="course">
+            <div class="container">
+    
+              <p class="section-subtitle">Popular Courses</p>
+    
+              <h2 class="h2 section-title">Pick A Course To Get Started</h2>
+    
+              <ul class="grid-list">
+    
+                <li>
+                  <div class="course-card">
+    
+                    <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                      <img src="./assets/images/olmpiyad.png" width="370" height="220" loading="lazy"
+                        alt="Course for Students: Vedic Foundations" class="img-cover">
+                    </figure>
+    
+                    <div class="abs-badge">
+                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+    
+                      <span class="span">3 Weeks</span>
+                    </div>
+    
+                    <div class="card-content">
+    
+                      <span class="badge">Beginner</span>
+    
+                      <h3 class="h3">
+                        <a href="https://youtu.be/8UfeQiAfudQ?si=3ZEemvhSmDPxPpl5" target = "_blank" class="card-title">Course for Students: Vedic Foundations
+    - Master the basics with our student-focused course. Unlock the power of Vedic Maths to enhance your numerical skills, making math enjoyable and accessible. Build a strong foundation for academic success.</a>
+                      </h3>
+    
+                      <div class="wrapper">
+    
+                        <div class="rating-wrapper">
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                        </div>
+    
+                        <p class="rating-text">(5.0/7 Rating)</p>
+    
+                      </div>
+    
+                      <data class="price" value="399">Rs. 399.00</data>
+    
+                      <ul class="card-meta-list">
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">8 Lessons</span>
+                        </li>
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">20 Students</span>
+                        </li>
+    
+                      </ul>
+    
+                    </div>
+    
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="course-card">
+    
+                    <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                      <img src="./assets/images/equation.png" width="370" height="220" loading="lazy"
+                        alt="Course for Teachers: Teaching Vedic Math" class="img-cover">
+                    </figure>
+    
+                    <div class="abs-badge">
+                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+    
+                      <span class="span">8 Weeks</span>
+                    </div>
+    
+                    <div class="card-content">
+    
+                      <span class="badge">Advanced</span>
+    
+                      <h3 class="h3">
+                        <a href="https://youtu.be/AVXDS3LGIoY?si=W_7c5KcXVdNmwAnb" target = "_blank" class="card-title">Play with Equation of Line, Round-5 (Class11-12) by Dr. Rakesh Bhatia</a>
+                      </h3>
+    
+                      <div class="wrapper">
+    
+                        <div class="rating-wrapper">
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                        </div>
+    
+                        <p class="rating-text">(4.5 /9 Rating)</p>
+    
+                      </div>
+    
+                      <data class="price" value="699">Rs. 699.00</data>
+    
+                      <ul class="card-meta-list">
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">15 Lessons</span>
+                        </li>
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">35 Students</span>
+                        </li>
+    
+                      </ul>
+    
+                    </div>
+    
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="course-card">
+    
+                    <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                      <img src="./assets/images/adv.png" width="370" height="220" loading="lazy"
+                        alt="Course for Competitive Exams: Aptitude Accelerator" class="img-cover">
+                    </figure>
+    
+                    <div class="abs-badge">
+                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+    
+                      <span class="span">3 Weeks</span>
+                    </div>
+    
+                    <div class="card-content">
+    
+                      <span class="badge">Advanced</span>
+    
+                      <h3 class="h3">
+                        <a href="https://youtu.be/omlcRIKR5qc?si=bAlMHQMHLb8NwXao" target = "_blank" class="card-title">Advance Vedic Mathematics Lesson-17 Part-3 by S.K.Kapoor Recorded by Rakesh Bhatia</a>
+                      </h3>
+    
+                      <div class="wrapper">
+    
+                        <div class="rating-wrapper">
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                        </div>
+    
+                        <p class="rating-text">(4.9 /7 Rating)</p>
+    
+                      </div>
+    
+                      <data class="price" value="499">Rs. 499.00</data>
+    
+                      <ul class="card-meta-list">
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">13 Lessons</span>
+                        </li>
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">18 Students</span>
+                        </li>
+    
+                      </ul>
+    
+                    </div>
+    
+                  </div>
+                </li>
+    
+              </ul>
+    
+              <a href="https://www.youtube.com/@VedicMathsSolutions/playlists" target="_blank" class="btn has-before">
+                <span class="span">Browse more Free courses</span>
+    
+                <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+              </a>
+    
+            </div>
+          </section>
+    
+    
+    
+    
+    
+          <!-- 
+            - #VIDEO
+          -->
+    
+          <section class="video has-bg-image" aria-label="video"
+            style="background-image: url'https://youtu.be/ckC5YEZR36Y?si=lGOR_yyW8v35Xgo9'">
+            <div class="container">
+    
+              <div class="video-card">
+                <img src="./assets/images/video-shape-1.png" width="1089" height="605" z-index="0" loading="lazy" alt=""
+                class="shape video-shape-1">
+  
+              <img src="./assets/images/video-shape-2.png" width="158" height="174" z-index="0" loading="lazy" alt=""
+                class="shape video-shape-2">
+                
+    
+                <div class="video-banner img-holder has-after" style="--width: ; --height: ;">
+                  <img src="./assets/images/podcast1.png" width="970" height="550" loading="lazy" alt="video banner"
+                    class="img-cover">
+    
+                    <a href="https://youtu.be/ckC5YEZR36Y?si=lGOR_yyW8v35Xgo9" target="_blank">
+                      <button class="play-btn" aria-label="play video">
+                        <ion-icon name="play" aria-hidden="true"></ion-icon>
+                      </button>
+                    
+                </div>
+    
+               
+                </a>
+    
+              </div>
+    
+            </div>
+          </section>
+    
+    
+    
+    
+    
+          <!-- 
+            - #STATE
+          -->
+    
+          <section class="section stats" aria-label="stats">
+            <div class="container">
+    
+              <ul class="grid-list">
+    
+                <li>
+                  <div class="stats-card" style="--color: 170, 75%, 41%">
+                    <h3 class="card-title">29.3k</h3>
+    
+                    <p class="card-text">Student Enrolled</p>
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="stats-card" style="--color: 351, 83%, 61%">
+                    <h3 class="card-title">32.4K</h3>
+    
+                    <p class="card-text">Class Completed</p>
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="stats-card" style="--color: 260, 100%, 67%">
+                    <h3 class="card-title">100%</h3>
+    
+                    <p class="card-text">Satisfaction Rate</p>
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="stats-card" style="--color: 42, 94%, 55%">
+                    <h3 class="card-title">354+</h3>
+    
+                    <p class="card-text">Top Instructors</p>
+                  </div>
+                </li>
+    
+              </ul>
+    
+            </div>
+          </section>
+    
+    
+    
+    
+    
+          <!-- 
+            - #BLOG
+          -->
+    
+          <section class="section blog has-bg-image" id="blog" aria-label="blog"
+            style="background-image: url('./assets/images/blog-bg.svg')">
+            <div class="container">
+    
+              <p class="section-subtitle">Latest Articles</p>
+    
+              <h2 class="h2 section-title">Enchanting Moments on Stage</h2>
+    
+              <ul class="grid-list">
+    
+                <li>
+                  <div class="blog-card">
+    
+                    <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+                      <img src="./assets/images/award_1.jpg" width="370" height="370" loading="lazy"
+                        alt="Enchanting Moments on Stage 1" class="img-cover">
+                    </figure>
+    
+                    <div class="card-content">
+    
+                      <a href="#" class="card-btn" aria-label="read more">
+                        <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                      </a>
+    
+                      <a href="#" class="card-subtitle">Rohtak, Haryana</a>
+    
+                      <h3 class="h3">
+                        <a href="#" class="card-title">Enchanting Moments on Stage</a>
+                      </h3>
+    
+                      <ul class="card-meta-list">
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">Oct 10, 2021</span>
+                        </li>
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">Com 09</span>
+                        </li>
+    
+                      </ul>
+    
+                      <p class="card-text">
+                       Step into the captivating world of Vedic Maths through our stage photos and event highlights, where the magic of learning unfolds.
+                      </p>
+    
+                    </div>
+    
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="blog-card">
+    
+                    <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+                      <img src="./assets/images/award_2.jpg" width="370" height="370" loading="lazy"
+                        alt="Enchanting Moments on Stage" class="img-cover">
+                    </figure>
+    
+                    <div class="card-content">
+    
+                      <a href="#" class="card-btn" aria-label="read more">
+                        <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                      </a>
+    
+                      <a href="#" class="card-subtitle">Delhi</a>
+    
+                      <h3 class="h3">
+                        <a href="#" class="card-title">Enchanting Moments on Stage</a>
+                      </h3>
+    
+                      <ul class="card-meta-list">
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">Oct 10, 2021</span>
+                        </li>
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">Com 09</span>
+                        </li>
+    
+                      </ul>
+    
+                      <p class="card-text">
+                       Step into the captivating world of Vedic Maths through our stage photos and event highlights, where the magic of learning unfolds.
+                      </p>
+    
+                    </div>
+    
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="blog-card">
+    
+                    <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+                      <img src="./assets/images/award_3.jpg" width="370" height="370" loading="lazy"
+                        alt="Enchanting Moments on Stage" class="img-cover">
+                    </figure>
+    
+                    <div class="card-content">
+    
+                      <a href="#" class="card-btn" aria-label="read more">
+                        <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                      </a>
+    
+                      <a href="#" class="card-subtitle">bangalore, karnataka</a>
+    
+                      <h3 class="h3">
+                        <a href="#" class="card-title">Enchanting Moments on Stage</a>
+                      </h3>
+    
+                      <ul class="card-meta-list">
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">Oct 10, 2021</span>
+                        </li>
+    
+                        <li class="card-meta-item">
+                          <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span">Com 09</span>
+                        </li>
+    
+                      </ul>
+    
+                      <p class="card-text">
+                       Step into the captivating world of Vedic Maths through our stage photos and event highlights, where the magic of learning unfolds.
+                      </p>
+    
+                    </div>
+    
+                  </div>
+                </li>
+    
+              </ul>
+    
+              <img src="./assets/images/blog-shape.png" width="186" height="186" loading="lazy" alt=""
+                class="shape blog-shape">
+    
+            </div>
+          </section>
+    
+        </article>
+      </main>
+    
+    
+           
+          
+          <title>Contact Form</title>
+      </head>
+      
+      <div>
+        <div class="form-container">
+          <div>
+            <img src="./assets/images/blog-1.jpg" class="formform" >
+            
+        </div>
+          <form action="https://formspree.io/f/mrgnkqnv" method="POST">
+              <h2>Have a question or need assistance!</h2>
+              <label for="email">Your Email:</label>
+              <input type="email" name="email" required>
+    
+              <label for="message">Your Message:</label>
+              <textarea name="message" rows="4" required></textarea>
+    
+              <button type="submit">Send</button>
+          </form>
+    
+          
+      </div>
+    </div>
+   
+      <!-- side bar social media -->
+      
+     <style>
+
+    .social-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: fixed;
+      z-index: 20;
+      top: 50%;
+      left: 20px; /* Adjust this value to set the desired gap from the left edge */
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: left 0.3s ease;
+    }
+
+    .social-list.hidden {
+      left: -200px; /* Adjust this value to hide the social list off-screen */
+    }
+
+    .social-list li {
+      margin-bottom: 10px;
+    }
+
+    #toggleButton {
+      position: fixed;
+      top: 20%;
+      z-index: 20;
+      left: 0;
+      transform: translateY(-50%);
+      background-color: #00060a4d;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="toggleButton"><<</button>
+
+  <ul class="social-list">
+    <li>
+      <a href="https://www.facebook.com/rakesh.bhatia.505/" target="_blank">
+        <img src="./readme-images/f.png" width="30" height="auto"> 
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.linkedin.com/in/dr-rakesh-bhatia-793505245/" target="_blank">
+        <img src="./readme-images/R.png" width="30" height="auto"> 
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.instagram.com/vedic_maths_solution/" target="_blank">
+        <img src="./readme-images/i.png" width="30" height="auto"> 
+      </a>
+    </li>
+
+    <li>
+      <a href="https://x.com/RakeshB59785148?t=nUjc0Ob84nGTFFEUnPZG-w&s=09" target="_blank">
+        <img src="./readme-images/x.png" width="30" height="auto"> 
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.youtube.com/@VedicMathsSolutions" target="_blank" >
+        <img src="./readme-images/y.png" width="30" height="auto"> 
+      </a>
+    </li>
+  </ul>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const socialList = document.querySelector('.social-list');
+      const toggleButton = document.getElementById('toggleButton');
+
+      toggleButton.addEventListener('click', function () {
+        socialList.classList.toggle('hidden');
+      });
+    });
+  </script>
+      
+      
+    
+    
+    
+      <!-- 
+        - #FOOTER
+      -->
+    
+      <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+    
+        <div class="footer-top section">
+          <div class="container grid-list">
+    
+            <div class="footer-brand">
+    
+              <a href="#" class="logo">
+                <img src="./assets/images/NUMERICVEDAPNG.png" width="162" height="50" alt="numericveda logo">
+              </a>
+    
+              <p class="footer-brand-text">
+                Master Vedic Maths: Students excel, educators innovate, and exam aspirants thrive. Elevate your skills for a brighter future with us!
+              </p>
+    
+              <div class="wrapper">
+                <span class="span">Add:</span>
+    
+                <address class="address">Rohtak, Haryana</address>
+              </div>
+    
+              <div class="wrapper">
+                <span class="span">Call:</span>
+    
+                <a href="tel:9466235578" class="footer-link">9466235578</a>
+              </div>
+    
+              <div class="wrapper">
+                <span class="span">Email:</span>
+    
+                <a href="mailto:rakeshbhatia106@gmail.com" class="footer-link">rakeshbhatia106@gmail.com</a>
+              </div>
+    
+            </div>
+    
+            <ul class="footer-list">
+    
+              <li>
+                <p class="footer-list-title">Online Platform</p>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">About</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Courses</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Instructor</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Events</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Instructor Profile</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Purchase Guide</a>
+              </li>
+    
+            </ul>
+    
+            <ul class="footer-list">
+    
+              <li>
+                <p class="footer-list-title">Links</p>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Contact Us</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Gallery</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">News & Articles</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">FAQ's</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Sign In/Registration</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Coming Soon</a>
+              </li>
+    
+            </ul>
+    
+            <div class="footer-list">
+    
+              <p class="footer-list-title">Contacts</p>
+    
+              <p class="footer-list-text">
+                Enter your email address to register to our newsletter subscription
+              </p>
+    
+              <form action="" class="newsletter-form">
+                <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+    
+                <button type="submit" class="btn has-before">
+                  <span class="span">Subscribe</span>
+    
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </button>
+              </form>
+
+            </div>
+    
+          </div>
+        </div>
+        
+    
+        <div class="footer-bottom">
+          <div class="container">
+
+            <style>
+              body {
+                text-align: center;
+              }
+          
+              .centered-text {
+                display: inline-block;
+              }
+            </style>
+    
+            
+              <p class="centered-text"> &copy; 2024 NumericVeda: Vedic Maths Institute. All rights reserved. </p>  
+          
+    
+          </div>
+        </div>
+    
+      </footer>
+    
+    
+    
+    
+    
+      <!-- 
+        - #BACK TO TOP
+      -->
+    
+      <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+      </a>
+    
+    
+    
+    
+    
+      <!-- 
+        - custom js link
+      -->
+      <!-- <script src="./assets/js/script.js" defer></script> -->
+    
+      <!-- 
+        - ionicon link
+      -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+      <id="top">
+        <!-- whatsapp -->
+        <div class="whatsapp">
+          <a href="https://wa.me/919466235578" target="_blank"> <!-- Replace the href with your WhatsApp link -->
+              <!-- You can use a WhatsApp icon image or any text/icon of your choice -->
+          <img src="./assets/images/whatsapp_icon.png" width="50" height="50">
+        </a>
+      </div>
+      
+
+  </body>
+</html>

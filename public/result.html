@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Course Recommendation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 50px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        .program-container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdf-link {
+            display: block;
+            margin-bottom: 10px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .pdf-link:hover {
+            text-decoration: underline;
+        }
+
+        .animate {
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Style for the dropdown container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            color: blue;
+        }
+
+        /* Style for the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Style for the dropdown links */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown content when the link is hovered over */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Style for the dropdown button */
+        .dropdown .btn {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .dropdown .btn:hover {
+            background-color: #45a049;
+        }
+        .bttn {
+    margin-right: 0;
+    float: right; /* Align the button to the right */
+    color: #ffffff;
+
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<nav class="navbar" data-navbar>
+
+  
+  </div>
+
+  <ul class="navbar-list">
+
+    <a href="/Login" target="_blank" class="btn">Book Your Class</a>
+
+    <li class="dropdown"><a href="./aboutus.html" target="_blank" class="dropbtn">About</a></li>
+
+    <li class="dropdown"><a href="./message.html" target="_blank" class="dropbtn">messageUs</a></li>
+
+    <li class="dropdown"><a href="./gallery.html" target="_blank" class="dropbtn">Gallery</a></li>
+
+    <li class="dropdown">
+        <a class="dropbtn">Programs</a>
+        <div class="dropdown-content">
+            
+            
+            <a href="./schedule.html" target="_blank">Live Learning Programs</a>
+            <a href="./course.html" target="_blank">Certification Courses</a>
+        </div>
+    </li>
+
+    <li class="dropdown"><a href="./vedicmaths.html" target="_blank" class="dropbtn">Textbooks</a>
+
+    <li class="dropdown"><a href="./Journals.html" target="_blank" class="dropbtn">Journal</a></li>
+
+    <!-- Add other menu items here -->
+
+</ul>
+
+
+</nav>      
+
+<div class="container">
+    <h1>Course Recommendation</h1>
+    <p>Click button to get course recommendations:</p>
+
+    <div class="input-group">
+        <label for="score">Your Score:</label>
+        <input type="number" id="score" placeholder="Enter your score" />
+    </div>
+
+    <button onclick="recommendCourse()">Get Recommendation</button>
+
+    <p id="result"></p>
+</div>
+
+<div class="container">
+    <h1>Choose UserType to see Course Details:</h1>
+    <select id="categorySelect" onchange="toggleAdditionalOptions()">
+        <option value="" selected disabled>Choose an option</option>
+        <option value="Online Certification Programs">Online Certification Programs (4 weeks program)</option>
+        <option value="Student Learning - Basic to Advance">Student Learning - Basic to Advance</option>
+        <option value="Ultra Advanced Vedic Maths Techniques">Ultra Advanced Vedic Maths Techniques</option>
+        <option value="Crack Govt Exams with Ease: Vedic Math Mastery Course!">Crack Govt Exams with Ease: Vedic Math Mastery Course!</option>
+        <option value="Teacher Training & Certification">Teacher Training & Certification</option>
+        <option value="Mind Training for Fast Thinking">Mind Training for Fast Thinking</option>
+        <option value="Enhance focus by restricting social media and providing worksheets with detailed analysis.">Enhance focus by restricting social media and providing worksheets with detailed analysis.</option>
+        <option value="Live Free Workshops">Live Free Workshops</option>
+        <option value="Graduation Level Course for Universities">Graduation Level Course for Universities</option>
+    </select>
+    <button class="btn" onclick="selectCategory()">Choose</button>
+
+    <div class="dropdown" id="additional-options" style="display: none;">
+        <select id="class-selection">
+            <option value="">Select Class</option>
+            <option value="Class 6">Class 6</option>
+            <option value="Class 7">Class 7</option>
+            <option value="Class 8">Class 8</option>
+            <option value="Class 9">Class 9</option>
+            <option value="Class 10">Class 10</option>
+            <option value="Class 11">Class 11</option>
+            <option value="Class 12">Class 12</option>
+        </select>
+        <button class="btn" onclick="selectClass()">Choose</button>
+    </div>
+</div>
+
+<script>
+    function toggleAdditionalOptions() {
+        var categorySelect = document.getElementById("categorySelect");
+        var additionalOptions = document.getElementById("additional-options");
+        
+        if (categorySelect.value === "Student Learning - Basic to Advance") {
+            additionalOptions.style.display = "block";
+        } else {
+            additionalOptions.style.display = "none";
+        }
+    }
+
+    function selectCategory() {
+        var categorySelect = document.getElementById("categorySelect");
+        var selectedCategory = categorySelect.value;
+        
+        // Add links for each option
+        switch (selectedCategory) {
+            case "Online Certification Programs":
+                window.location.href = "#online-certification-programs";
+                break;
+            case "Ultra Advanced Vedic Maths Techniques":
+                window.location.href = "#ultra-advanced-vedic-maths";
+                break;
+            case "Crack Govt Exams with Ease: Vedic Math Mastery Course!":
+                window.location.href = "#crack-govt-exams";
+                break;
+            case "Teacher Training & Certification":
+                window.location.href = "#teacher-training";
+                break;
+            case "Mind Training for Fast Thinking":
+                window.location.href = "#mind-training";
+                break;
+            case "Enhance focus by restricting social media and providing worksheets with detailed analysis.":
+                window.location.href = "#enhance-focus";
+                break;
+            case "Live Free Workshops":
+                window.location.href = "#live-free-workshops";
+                break;
+            case "Graduation Level Course for Universities":
+                window.location.href = "#graduation-level-course";
+                break;
+            default:
+                alert("Please select a category");
+                break;
+        }
+    }
+
+    function selectClass() {
+        var classSelection = document.getElementById("class-selection");
+        var selectedClass = classSelection.value;
+        
+        // Add links for each option
+        switch (selectedClass) {
+            case "Class 6":
+                window.location.href = "#class-6";
+                break;
+            case "Class 7":
+                window.location.href = "#class-7";
+                break;
+            case "Class 8":
+                window.location.href = "#class-8";
+                break;
+            case "Class 9":
+                window.location.href = "#class-9";
+                break;
+            case "Class 10":
+                window.location.href = "#class-10";
+                break;
+            case "Class 11":
+                window.location.href = "#class-11";
+                break;
+            case "Class 12":
+                window.location.href = "#class-12";
+                break;
+            default:
+                alert("Please select a class");
+                break;
+        }
+    }
+</script>
+
+
+<header>
+    <h1>Our Comprehensive Learning Programs</h1>
+   <button> <a href="/Login" target="_blank" class="bttn">Book Your Class</a></button>
+</header>
+
+<section id="online-certification-programs" class="program-container animate" >
+    <h2>Online Certification Programs (4 weeks program)</h2>
+    <p>Description of online certification programs...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="student-learning" class="program-container animate" >
+    <h2>Student Learning - Basic to Advance</h2>
+    <p>Description of student learning programs...</p>
+    <!-- Add links and additional information here -->
+    <div class="dropdown">
+        <li class="dropdown">
+            <a class="dropbtn">Live Courses - Class-wise</a>
+            <div class="dropdown-content">
+                <a href="#class-6">Class 6</a>
+                <a href="#class-7">Class 7</a>
+                <a href="#class-8">Class 8</a>
+                <a href="#class-9">Class 9</a>
+                <a href="#class-10">Class 10</a>
+                <a href="#class-11">Class 11</a>
+                <a href="#class-12">Class 12</a>
+            </div>
+        </li>
+    </div>
+</section>
+
+<section id="ultra-advanced-vedic-maths" class="program-container animate" >
+    <h2>Ultra Advanced Vedic Maths Techniques</h2>
+    <p>Description of ultra advanced Vedic maths techniques...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="crack-govt-exams" class="program-container animate" >
+    <h2>Crack Govt Exams with Ease: Vedic Math Mastery Course!</h2>
+    <p>Description of Vedic math mastery course for govt exams...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="teacher-training" class="program-container animate" >
+    <h2>Teacher Training & Certification</h2>
+    <p>Provide training for teachers with a focus on certification to enhance teaching skills.</p>
+    <li class="dropdown">
+        <a class="dropbtn">Teacher Training Plan</a>
+        <div class="dropdown-content">
+            <a href="https://drive.google.com/file/d/1mfnRa7QWx4qWV-ndvcv1rZvpTDvKvgbe/view?usp=drive_link" target="_blank">Proposal for Schools</a>
+            <a href="/Form" target="_blank">Proposal for individual learners</a>
+        </div>
+    </li>
+</section>
+
+<section id="mind-training" class="program-container animate" >
+    <h2>Mind Training for Fast Thinking</h2>
+    <p>Description of mind training for fast thinking...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="enhance-focus" class="program-container animate" >
+    <h2>Enhance focus by restricting social media and providing worksheets with detailed analysis.</h2>
+    <p>Description of focus enhancement program...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="live-free-workshops" class="program-container animate" >
+    <h2>Live Free Workshops</h2>
+    <p>Description of live free workshops...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="graduation-level-course" class="program-container animate" >
+    <h2>Graduation Level Course for Universities</h2>
+    <p>Description of graduation level course for universities...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+
+<section id="class-6" class="program-container animate" >
+    <h3>Class 6</h3>
+    <p>Description of class 6 courses...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="class-7" class="program-container animate" >
+    <h3>Class 7</h3>
+    <p>Description of class 7 courses...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="class-8" class="program-container animate" >
+    <h3>Class 8</h3>
+    <p>Description of class 8 courses...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="class-9" class="program-container animate" >
+    <h3>Class 9</h3>
+    <p>Description of class 9 courses...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="class-10" class="program-container animate" >
+    <h3>Class 10</h3>
+    <p>Description of class 10 courses...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="class-11" class="program-container animate" >
+    <h3>Class 11</h3>
+    <p>Description of class 11 courses...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<section id="class-12" class="program-container animate" >
+    <h3>Class 12</h3>
+    <p>Description of class 12 courses...</p>
+    <!-- Add links and additional information here -->
+</section>
+
+<script>
+  
+
+    // Function to extract the score parameter from the URL
+    function getScoreFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = urlParams.get('score');
+        return score;
+    }
+
+    // Function to auto-fill the score field from the URL parameter
+    function autoFillScore() {
+        const score = getScoreFromURL();
+        if (score !== null) {
+            document.getElementById('score').value = score;
+        }
+    }
+
+    // Call the function to auto-fill the score field when the page loads
+    window.onload = autoFillScore;
+
+    function recommendCourse() {
+        var score = document.getElementById('score').value;
+        var resultElement = document.getElementById('result');
+        var recommendation;
+
+        if (score >= 0 && score <= 10) {
+            recommendation = "Embark on your learning journey by exploring our 'Basic to Advance' course, an ideal starting point to build a strong foundation.";
+        } else if (score > 10 && score <= 60) {
+            recommendation = "You've got a solid grasp of the basics, making you ready to dive into our advanced course that aligns perfectly with your interests.";
+        } else if (score > 60) {
+            recommendation = "Congratulations on your impressive score! Delve into our ultra-advanced courses tailored for high achievers like you.";
+        } else {
+            recommendation = "Invalid score. Please enter a valid score.";
+        }
+
+        resultElement.textContent = recommendation;
+    }
+</script>
+<!-- 
+        - #FOOTER
+      -->
+    
+      <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+    
+        <div class="footer-top section">
+          <div class="container grid-list">
+    
+            <div class="footer-brand">
+    
+              <a href="#" class="logo">
+                <img src="./assets/images/NUMERICVEDAPNG.png" width="162" height="50" alt="numericveda logo">
+              </a>
+    
+              <p class="footer-brand-text">
+                Master Vedic Maths: Students excel, educators innovate, and exam aspirants thrive. Elevate your skills for a brighter future with us!
+              </p>
+    
+              <div class="wrapper">
+                <span class="span">Add:</span>
+    
+                <address class="address">Rohtak, Haryana</address>
+              </div>
+    
+              <div class="wrapper">
+                <span class="span">Call:</span>
+    
+                <a href="tel:9466235578" class="footer-link">9466235578</a>
+              </div>
+    
+              <div class="wrapper">
+                <span class="span">Email:</span>
+    
+                <a href="mailto:rakeshbhatia106@gmail.com" class="footer-link">rakeshbhatia106@gmail.com</a>
+              </div>
+    
+            </div>
+    
+            <ul class="footer-list">
+    
+              <li>
+                <p class="footer-list-title">Online Platform</p>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">About</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Courses</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Instructor</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Events</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Instructor Profile</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Purchase Guide</a>
+              </li>
+    
+            </ul>
+    
+            <ul class="footer-list">
+    
+              <li>
+                <p class="footer-list-title">Links</p>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Contact Us</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Gallery</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">News & Articles</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">FAQ's</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Sign In/Registration</a>
+              </li>
+    
+              <li>
+                <a href="#" class="footer-link">Coming Soon</a>
+              </li>
+    
+            </ul>
+    
+            <div class="footer-list">
+    
+              <p class="footer-list-title">Contacts</p>
+    
+              <p class="footer-list-text">
+                Enter your email address to register to our newsletter subscription
+              </p>
+    
+              <form action="" class="newsletter-form">
+                <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+    
+                <button type="submit" class="btn has-before">
+                  <span class="span">Subscribe</span>
+    
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </button>
+              </form>
+
+            </div>
+    
+          </div>
+        </div>
+        
+    
+        <div class="footer-bottom">
+          <div class="container">
+
+            <style>
+              body {
+                text-align: center;
+              }
+          
+              .centered-text {
+                display: inline-block;
+              }
+            </style>
+    
+            
+              <p class="centered-text"> &copy; 2024 NumericVeda: Vedic Maths Institute. All rights reserved. </p>  
+          
+    
+          </div>
+        </div>
+    
+      </footer>
+    
+    
+    
+    
+    
+      <!-- 
+        - #BACK TO TOP
+      -->
+    
+      <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+      </a>
+    
+    
+    
+    
+    
+      <!-- 
+        - custom js link
+      -->
+      <!-- <script src="./assets/js/script.js" defer></script> -->
+    
+      <!-- 
+        - ionicon link
+      -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+      <id="top">
+        <!-- whatsapp -->
+        <div class="whatsapp">
+          <a href="https://wa.me/919466235578" target="_blank"> <!-- Replace the href with your WhatsApp link -->
+              <!-- You can use a WhatsApp icon image or any text/icon of your choice -->
+          <img src="./assets/images/whatsapp_icon.png" width="50" height="50">
+        </a>
+      </div>
+      
+
+  </body>
+</html>
