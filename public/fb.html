@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receive Money via UPI</title>
+    <!-- Include qrcode.js library -->
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <style type="text/css">/* Add this CSS code to your <style> tag or external stylesheet */
+
+      /* Body styles */
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f9f9f9;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+      }
+      
+      /* Container for payment section */
+      .c1 {
+          max-width: 400px;
+          padding: 20px;
+          background-color: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          animation: slideIn 0.5s ease forwards;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Heading styles */
+      .c2 {
+          font-size: 24px;
+          color: #333;
+          margin-bottom: 20px;
+          text-align: center;
+      }
+      
+      /* Paragraph styles */
+      .c3 {
+          font-size: 16px;
+          color: #666;
+          margin-bottom: 10px;
+          text-align: center;
+      }
+      
+      /* QR code container */
+      .c4 {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+      
+      /* Payment link styles */
+      .c5 {
+          display: block;
+          text-align: center;
+          font-size: 16px;
+          color: #fff;
+          background-color: #007bff;
+          border: none;
+          border-radius: 4px;
+          padding: 10px 20px;
+          text-decoration: none;
+          transition: background-color 0.3s;
+      }
+      
+      .c5:hover {
+          background-color: #0056b3;
+      }
+      .c6 {
+            display: none;
+        }
+      </style>
+</head>
+<body>
+  <button class="c5" onclick="toggleContent()">Make Payment: Rs. 530 (limited-time offer)</button>
+  <div class="c6">
+    <div class="c1">
+        <h1 class="c2">Send Money via UPI</h1>
+        <p class="c3">Scan the QR code below or click the button to make a payment of ₹530:</p>
+        <div class="c4" id="qrcode"></div>
+        <a href="upi://pay?pa=ttusharkkumar124@ybl&pn=YourMerchantName&am=530&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+    </div>
+    <p class="c3">📲 After Payment:</p>
+    <p class="c3">💳 <strong>
+    Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+  </strong></p>
+  </div>
+    <script>
+        // Create a QR code with the UPI payment details
+        const upiId = 'ttusharkkumar124@ybl';
+        const amount = '530';
+        const transactionNote = 'Payment for Product';
+        const qrData = `upi://pay?pa=${upiId}&pn=YourMerchantName&am=${amount}&tn=${transactionNote}`;
+
+         // Function to reveal the hidden content
+         function revealContent() {
+            const hiddenContent = document.querySelector('.c6');
+            hiddenContent.style.display = 'block';
+        }
+ // Function to toggle the hidden content
+ function toggleContent() {
+            const hiddenContent = document.querySelector('.c6');
+            if (hiddenContent.style.display === 'none') {
+                hiddenContent.style.display = 'block';
+            } else {
+                hiddenContent.style.display = 'none';
+            }
+        }
+        // Generate the QR code
+        const qrcode = new QRCode(document.getElementById('qrcode'), {
+            text: qrData,
+            width: 200,
+            height: 200,
+        });
+    </script>
+    
+</body>
+</html>

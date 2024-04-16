@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Certification Programs</title>
+  <link rel="stylesheet" href="./assets/css/course.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+</head>
+
+<body class="dark-theme">
+    <section>
+        <!-- Banner Image -->
+        <div class="banner-container">
+            <h1 class="banner-heading">Online Certification Programs</h1>
+        </div>
+    </section>
+   
+
+    
+    <div class="section-container">
+
+    <div class="container">
+        <p><strong>Course Duration:</strong> Four Weeks</p>
+        <p><strong>Course Timing:</strong> Live classes on working days from 8:00 pm to 10:00 pm daily. Weekend worksheets will be given as assignments.</p>
+        <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (4.9/5 Stars)</p>
+</div>
+<div class="section-container">
+
+        <!-- Top 3 Reviews -->
+        <h2>Top Reviews</h2>
+        <div class="review-container">
+        <div class="review-slider">
+
+            <div class="review">
+                <b><i>TUSHAR KAUSHIK</i></b>
+                <p>"This course has been incredibly helpful for my child. The concepts are explained in a clear and concise manner. Highly recommended!"</p>
+            </div>
+            <div class="review">
+                <b><i>SACHIN</i></b>
+                <p>"Dr. Rakesh Bhatia is an excellent instructor. He makes learning mathematics enjoyable and easy to understand."</p>
+            </div>
+            <div class="review">
+                <b><i>PARAS</i></b>
+                <p>"The course content is comprehensive, and the live classes are interactive. My child's math skills have improved significantly since enrolling."</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="section-container">
+    <!-- About Instructor -->
+    <h3>About the Instructor</h3>
+    <div class="instructor">
+      
+      <a data-fancybox="gallery" href="./assets/images/R_Sir.jpg">
+        <img src="./assets/images/R_Sir.jpg" class="teacher" alt="Dr. Rakesh Bhatia">
+      </a>
+      <div class="content">
+        <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+         
+        <h2>Educational Experience</h2>
+        <p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+          Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+          
+        <p>📅 <strong>New Batch Starting Date:</strong>
+          The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+        
+        <p>🖥️ <strong>Daily Online Classes:</strong>
+          Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+        
+        <p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+        <p>📞 Contact Us for Queries: +919466235578</p>
+        
+        <p>Don't miss this opportunity to experience the power of Vedic Mathematics. Reserve your spot now!</p>      </div>
+    </div>
+    </div>
+    
+    <!-- Syllabus PDF Section -->
+<div class="section-container">
+  <section id="syllabus-pdf" class="syllabus-pdf-container">
+    <header>
+      <h2>Download Syllabus</h2>
+    </header>
+    <p>Download the course syllabus cover for detailed information about the curriculum.</p>
+    <a href="./assets/pdf/syllabus_cover.pdf" download class="button">Download Syllabus Cover PDF</a>
+  </section>
+</div>
+
+    <div class="section-container">
+    <!-- Payment -->
+    <header>
+      <h2> <a>Payment Option: <span> Buy this course at just ₹1499 (limited-time offer)</span> </a></h2>
+    </header>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+    <button class="c5" onclick="toggleContent()">Buy Now</button>
+  <div class="c6">
+    <div class="c1">
+        <h1 class="c2">Send Money via UPI</h1>
+        <p class="c3">Scan the QR code below or click the button to make a payment of ₹1499:</p>
+        <div class="c4" id="qrcode"></div>
+        <a href="upi://pay?pa=9466235578749@paytm&pn=YourMerchantName&am=1499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+    </div>
+    <p class="c3">📲 After Payment:</p>
+    <p class="c3">💳 <strong>
+    Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+  </strong></p>
+  </div>
+    <script>
+      // Create a QR code with the UPI payment details
+      const upiId = '9466235578749@paytm';
+      const amount = '1499';
+      const transactionNote = 'Payment for Product';
+      const qrData = `upi://pay?pa=${upiId}&pn=YourMerchantName&am=${amount}&tn=${transactionNote}`;
+
+       // Function to reveal the hidden content
+       function revealContent() {
+          const hiddenContent = document.querySelector('.c6');
+          hiddenContent.style.display = 'block';
+      }
+// Function to toggle the hidden content
+function toggleContent() {
+          const hiddenContent = document.querySelector('.c6');
+          if (hiddenContent.style.display === 'none') {
+              hiddenContent.style.display = 'block';
+          } else {
+              hiddenContent.style.display = 'none';
+          }
+      }
+      // Generate the QR code
+      const qrcode = new QRCode(document.getElementById('qrcode'), {
+          text: qrData,
+          width: 200,
+          height: 200,
+      });
+  </script>
+    </div>
+    <div class="section-container">
+    <!-- Booking Button -->
+    <h3>Book Your Free Demo Class</h3>
+    <p>Unlock the secrets of ultra advanced Vedic Mathematics and elevate your mathematical skills to new heights. Reserve your spot now!</p>
+    <a href="/Login" class="button">Book Demo</a>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="qrcode.min.js"></script>
+  <script>
+    // Initialize slick slider
+    $('.review-slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      adaptiveHeight: true
+    });
+
+   
+  </script>
+  </div>
+  <!-- whatsapp -->
+  <div class="whatsapp">
+    <a href="https://wa.me/919466235578" target="_blank"> <!-- Replace the href with your WhatsApp link -->
+        <!-- You can use a WhatsApp icon image or any text/icon of your choice -->
+    <img src="./assets/images/whatsapp_icon.png" width="50" height="50">
+  </a>
+  <div class="message-container">
+    <img src="./readme-images/assistent.png" alt="Lady Icon"> <!-- Replace "lady_icon.gif" with your lady icon image -->
+    <p>Feel free to message us!</p>
+</div>
+</div>
+</body>
+</html>

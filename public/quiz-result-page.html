@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result Page</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        #quiz-result {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+        }
+
+        #score {
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+            color: #555;
+        }
+
+        .question-solution {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffffffc7;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #333;
+        }
+
+        .question-solution h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .question-solution p {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .question-solution p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-result">
+        <h1>Quiz Result</h1>
+        <div id="score"></div>
+        <div id="question-solutions"></div>
+        <button onclick="navigateToResultPage()">Get Recommendation: Based on your score, we recommend taking a specific course</button>
+    </div>
+
+    <script>
+        // Get the score from the URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = urlParams.get('score');
+        document.getElementById('score').textContent = `Your score: ${score} / 100`;
+
+     // Get the question solutions from local storage
+const questionSolutions = JSON.parse(localStorage.getItem('questionSolutions'));
+
+// Display question solutions
+const questionSolutionsContainer = document.getElementById('question-solutions');
+if (questionSolutions) {
+    questionSolutions.forEach((solution, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.classList.add('question-solution');
+        questionDiv.innerHTML = `
+            <h3>Question ${index + 1}</h3>
+            <p>Correct Answer: ${solution.correctAnswer}</p>
+            <p>Your Answer: ${solution.userAnswer}</p>
+            <p>Explanation: ${getExplanation(index)}</p>
+        `;
+        questionSolutionsContainer.appendChild(questionDiv);
+    });
+} else {
+    questionSolutionsContainer.textContent = 'No question solutions found.';
+}
+
+// Function to provide explanation based on question index
+function getExplanation(questionIndex) {
+    switch (questionIndex) {
+        case 0:
+            return "We can use the Vedic Mathematics technique called 'Nikhilam Navatashcaramam Dashatah' (All from 9 and the last from 10). Here, the numbers are close to the base 100. Step 1: Subtract each number from 100: 100 - 98 = 2, 100 - 97 = 3. Step 2: Multiply the differences: 2 * 3 = 6. Step 3: Subtract the product from 100: 100 - 6 = 94. Step 4: Multiply the right-side digits: 8 * 7 = 56. Step 5: Combine the results: Concatenate 94 and 56 to get the answer: 9416.";
+        case 1:
+            return "We can use the Vedic Mathematics technique called 'Ekadhikena Purvena' (By one more than the previous one). Here, we want to find the rightmost part of the product, so we can apply this technique. Step 1: Take the last digit of the multiplier (20). Step 2: Multiply it by the number that is one less (1021). Step 3: Add a zero at the end. So, 1 * 1021 = 1021, add a zero to get 10210. The right part is 420.";
+        case 2:
+            return "We can apply the Vedic Mathematics technique called 'Vinculum' (Using complements) here. Step 1: Find the complement of each number from 1000 (1000 - 995 = 5). Step 2: Multiply the complements: 5 * 5 = 25. Step 3: Append the product to the number: 995 + 25 = 990025.";
+        case 3:
+            return "We can use the Vedic Mathematics technique called 'Anurupyena' (Proportionately). Step 1: Round off each number to the nearest base 100. 1015 ≈ 1020, 1002 ≈ 1000. Step 2: Multiply the rounded numbers: 1020 * 1000 = 1020000. Step 3: Adjust the product using the deviations. The deviation for 1015 is -5, and for 1002 is +2. Adjust the product by adding (-5 * 1002) + (2 * 1015) = -5010 + 2030 = -2980. Step 4: Add the adjustment to the product: 1020000 - 2980 = 1017000. The answer is 1017000, which is closest to option C) 1017003.";
+        case 4:
+            return "We can use the Vedic Mathematics technique called 'Nikhilam Navatashcaramam Dashatah' (All from 9 and the last from 10). Since both numbers are close to 10000, we can subtract them from 10000 and multiply the differences. Step 1: Subtract each number from 10000: 10000 - 9989 = 11, 10000 - 9990 = 10. Step 2: Multiply the differences: 11 * 10 = 110. Concatenate the result with the right-side multiplication, which is 89 * 90 = 8010. So, the answer is 99791100.";
+        case 5:
+            return "We can use the Vedic Mathematics technique called 'Ekadhikena Purvena' (By one more than the previous one). Step 1: Take the last two digits (85). Step 2: Multiply it by the number that is one less (9984). Step 3: Add the result to the square of the remaining part (9985 - 1 = 9984). So, 85 * 9984 = 848640, and 9984 * 9984 = 9968256. Adding these results, we get 99700225.";
+        case 6:
+            return "This can be solved using the Vedic Mathematics technique called 'Urdhva-Tiryagbhyam' (Vertically and Crosswise). (105 * 106) + (104 * 103) = 11130 + 10712 = 21842.";
+        case 7:
+            return "This can also be solved using the Vedic Mathematics technique called 'Urdhva-Tiryagbhyam' (Vertically and Crosswise). (106 * 107) + (109 * 104) = 11342 + 11336 = 22678.";
+        case 8:
+            return "We can use the Vedic Mathematics technique called 'Ekanyunena Purvena' (By one less than the one before). (9990 * 9995) + (9998 * 9980) = 9985 * 9990 + 9997 * 9980 = 99850050 + 99850260 = 199630090. So, the left part is 19963090.";
+        case 9:
+            return "This can be solved using the Vedic Mathematics technique called 'Urdhva-Tiryagbhyam' (Vertically and Crosswise). (102 * 100) + (20 * 5) = 102000 + 100 = 102500 + 10 = 102510.";
+        case 10:
+            return "This can also be solved using the Vedic Mathematics technique called 'Urdhva-Tiryagbhyam' (Vertically and Crosswise). (997 * 997) + (5 * 70) = 994019 + 350 = 994369 + 350 = 994719 + 350 = 994769 + 350 = 995119 + 350 = 995469 = 9975900.";
+        default:
+            return "Explanation not available.";
+    }
+}
+
+
+
+// Function to navigate to the quiz result page
+function navigateToResultPage() {
+    window.location.href = './quiz-result-page.html';
+}
+
+        // Define totalScore variable for navigateToResultPage function
+        let totalScore = parseFloat(score); // Initialize totalScore with the parsed score value
+
+        function navigateToResultPage() {
+            // Pass the total score to the result page as a parameter
+            window.location.href = `./schedule.html?score=${totalScore.toFixed(2)}`;
+            alert('Remember your score');
+        }
+    </script>
+</body>
+</html>

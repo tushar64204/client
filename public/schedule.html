@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
+            margin: 10px;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
@@ -25,7 +25,8 @@
 
         section {
             margin: 20px;
-            text-align: center;
+            text-align: left;
+            
         }
 
         .program-container {
@@ -39,7 +40,7 @@
         .pdf-link {
             display: block;
             margin-bottom: 10px;
-            color: #3498db;
+            color: #ffffff;
             text-decoration: none;
             font-weight: bold;
         }
@@ -60,31 +61,131 @@
                 opacity: 1;
             }
         }
-         ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center; /* Center the list horizontally */
+        /* Style for the dropdown container */
+
+        .containerchoose {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        li {
-            margin: 0 10px; /* Add spacing between list items */
-        }
-        a {
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
             text-decoration: none;
-            color: #333;
-            font-weight: bold;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
         }
-        a:hover {
-            text-decoration: underline;
+
+    
+
+        .class-info {
+            margin-bottom: 20px;
         }
+
+        .class-info p {
+            margin: 0;
+        }
+
+        .class-info h2 {
+            margin-top: 0;
+        }
+
+        .book-button {
+            float: right;
+            margin: 0;
+        }
+
+       
+  
+
+      /* Container for payment section */
+      .c1 {
+          max-width: 400px;
+          padding: 20px;
+          background-color: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          animation: slideIn 0.5s ease forwards;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Heading styles */
+      .c2 {
+          font-size: 24px;
+          color: #333;
+          margin-bottom: 20px;
+          text-align: center;
+      }
+      
+      /* Paragraph styles */
+      .c3 {
+          font-size: 16px;
+          color: #666;
+          margin-bottom: 10px;
+          text-align: center;
+      }
+      
+      /* QR code container */
+      .c4 {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+      
+      /* Payment link styles */
+      .c5 {
+          display: block;
+          text-align: center;
+          font-size: 16px; 
+          color: #fff;
+          background-color: #007bff;
+          border: none;
+          border-radius: 4px;
+          padding: 10px 20px;
+          text-decoration: none;
+          transition: background-color 0.3s;
+      }
+      
+      .c5:hover {
+          background-color: #0056b3;
+      }
+      .c6 {
+            display: none;
+        }
+          /* Media query for smaller screens */
+  @media screen and (max-width: 600px) {
+    .c1 {
+      max-width: 300px;
+    }
+  }
+      
+
     </style>
+
 </head>
 <body>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <header>
         <h1>Discover Our Live Learning Programs</h1>
     </header>
-
+<section>
     <div class="container">
 
 <nav class="navbar" data-navbar>
@@ -123,224 +224,1810 @@
 
 </nav>      
 
-    <section class="program-container animate">
-        <h2>Live Free Workshops</h2>
-        <p>Join our live workshops to enhance your skills and knowledge.</p>
-        <a class="pdf-link" href="your_workshop_plan_link.pdf" target="_blank">Workshop Plan</a>
-    </section>
 
-    <section class="program-container animate">
-        <h2>Live Courses - Class-wise</h2>
-        <p>Explore our class-wise live courses tailored to your academic needs.</p>
-        <div>
-        <ul>
-    <li><a  class="pdf-link" href="class6.html">Class 6</a></li>
-    <li><a class="pdf-link" href="class7.html">Class 7</a></li>
-    <li><a class="pdf-link" href="class8.html">Class 8</a></li>
-    <li><a class="pdf-link" href="class9.html">Class 9</a></li>
-    <li><a class="pdf-link" href="class10.html">Class 10</a></li>
-    <li><a class="pdf-link" href="class11.html">Class 11</a></li>
-    <li><a class="pdf-link" href="class12.html">Class 12</a></li>
-</ul>
-        </div>
-    </section>
+<div class="container">
+  <h1>Course Recommendation</h1>
+  <p>Click button to get course recommendations:</p>
 
-    <section class="program-container animate">
-        <h2>Live Courses - Standard-wise</h2>
-        <p>Choose from our standard-wise live courses for a structured learning experience.</p>
-        <ul>
-            <li><a  class="pdf-link" href="class6.html">Basic</a></li>
-            <li><a class="pdf-link" href="class7.html">Advanced</a></li>
-            <li><a class="pdf-link" href="class8.html">Ultra Advanced</a></li>
-        </ul>
-        </section>
+  <div class="input-group">
+      <label for="score">Your Score:</label>
+      <input type="number" id="score" placeholder="Enter your score" />
+  </div>
 
-        <!-- 
-        - #FOOTER
-      -->
-    
-      <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
-    
-        <div class="footer-top section">
-          <div class="container grid-list">
-    
-            <div class="footer-brand">
-    
-              <a href="#" class="logo">
-                <img src="./assets/images/NUMERICVEDAPNG.png" width="162" height="50" alt="numericveda logo">
-              </a>
-    
-              <p class="footer-brand-text">
-                Master Vedic Maths: Students excel, educators innovate, and exam aspirants thrive. Elevate your skills for a brighter future with us!
-              </p>
-    
-              <div class="wrapper">
-                <span class="span">Add:</span>
-    
-                <address class="address">Rohtak, Haryana</address>
-              </div>
-    
-              <div class="wrapper">
-                <span class="span">Call:</span>
-    
-                <a href="tel:9466235578" class="footer-link">9466235578</a>
-              </div>
-    
-              <div class="wrapper">
-                <span class="span">Email:</span>
-    
-                <a href="mailto:rakeshbhatia106@gmail.com" class="footer-link">rakeshbhatia106@gmail.com</a>
-              </div>
-    
-            </div>
-    
-            <ul class="footer-list">
-    
-              <li>
-                <p class="footer-list-title">Online Platform</p>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">About</a>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">Courses</a>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">Instructor</a>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">Events</a>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">Instructor Profile</a>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">Purchase Guide</a>
-              </li>
-    
-            </ul>
-    
-            <ul class="footer-list">
-    
-              <li>
-                <p class="footer-list-title">Links</p>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">Contact Us</a>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">Gallery</a>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">News & Articles</a>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">FAQ's</a>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">Sign In/Registration</a>
-              </li>
-    
-              <li>
-                <a href="#" class="footer-link">Coming Soon</a>
-              </li>
-    
-            </ul>
-    
-            <div class="footer-list">
-    
-              <p class="footer-list-title">Contacts</p>
-    
-              <p class="footer-list-text">
-                Enter your email address to register to our newsletter subscription
-              </p>
-    
-              <form action="" class="newsletter-form">
-                <input type="email" name="email_address" placeholder="Your email" required class="input-field">
-    
-                <button type="submit" class="btn has-before">
-                  <span class="span">Subscribe</span>
-    
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </button>
-              </form>
+  <button onclick="recommendCourse()">Get Recommendation</button>
 
-            </div>
+  <p id="result"></p>
+</div>
+
+</section>
+<section>
+<div class="containerchoose">
+  <h1>Choose UserType to see Course Details:</h1>
+  <select id="categorySelect" onchange="toggleAdditionalOptions()">
+      <option value="" selected disabled>Choose an option</option>
+      <option value="Live Free Workshops">Live Free Workshops</option>
+      <option value="Online Certification Programs">Online Certification Programs (4 weeks program)</option>
+      <option value="Student Learning - Basic to Advance">Student Learning - Basic to Advance</option>
+      <option value="Ultra Advanced Vedic Maths Techniques">Ultra Advanced Vedic Maths Techniques</option>
+      <option value="Crack Govt Exams with Ease: Vedic Math Mastery Course!">Crack Govt Exams with Ease: Vedic Math Mastery Course!</option>
+      <option value="Teacher Training & Certification">Teacher Training & Certification</option>
+      <option value="Mind Training for Fast Thinking">Mind Training for Fast Thinking</option>
+      <option value="Enhance focus by restricting social media and providing worksheets with detailed analysis.">Enhance focus using our worksheets with detailed analysis.</option>
+  </select>
+  <button class="btn" onclick="selectCategory()">Choose</button>
+</section>
+  <section>
+
+  <div class="containerchoose" id="additional-options" style="display: none;">
+    <h1>Choose your Class</h1>
+      <select id="class-selection">
+          <option value="">Select Class</option>
+          <option value="Class 6">Class 6</option>
+          <option value="Class 7">Class 7</option>
+          <option value="Class 8">Class 8</option>
+          <option value="Class 9">Class 9</option>
+          <option value="Class 10">Class 10</option>
+          <option value="Class 11">Class 11</option>
+          <option value="Class 12">Class 12</option>
+      </select>
+      <button class="btn" onclick="selectClass()">Choose</button>
+  </div>
+</div>
+</section>
+<script>
+  function toggleAdditionalOptions() {
+      var categorySelect = document.getElementById("categorySelect");
+      var additionalOptions = document.getElementById("additional-options");
+      
+      if (categorySelect.value === "Student Learning - Basic to Advance") {
+          additionalOptions.style.display = "block";
+      } else {
+          additionalOptions.style.display = "none";
+      }
+  }
+
+  function selectCategory() {
+      var categorySelect = document.getElementById("categorySelect");
+      var selectedCategory = categorySelect.value;
+      
+      // Add links for each option
+      switch (selectedCategory) {
+        case "Live Free Workshops":
+              window.location.href = "#live-free-workshops";
+              break;
+          case "Online Certification Programs":
+              window.location.href = "#online-certification-programs";
+              break;
+          case "Ultra Advanced Vedic Maths Techniques":
+              window.location.href = "#ultra-advanced-vedic-maths";
+              break;
+          case "Crack Govt Exams with Ease: Vedic Math Mastery Course!":
+              window.location.href = "#crack-govt-exams";
+              break;
+          case "Teacher Training & Certification":
+              window.location.href = "#teacher-training";
+              break;
+          case "Mind Training for Fast Thinking":
+              window.location.href = "#mind-training";
+              break;
+          case "Enhance focus by restricting social media and providing worksheets with detailed analysis.":
+              window.location.href = "#enhance-focus";
+              break;
+       
+          
+          default:
+              alert("Please select a category");
+              break;
+      }
+  }
+
+  function selectClass() {
+      var classSelection = document.getElementById("class-selection");
+      var selectedClass = classSelection.value;
+      
+      // Add links for each option
+      switch (selectedClass) {
+          case "Class 6":
+              window.location.href = "#class-6";
+              break;
+          case "Class 7":
+              window.location.href = "#class-7";
+              break;
+          case "Class 8":
+              window.location.href = "#class-8";
+              break;
+          case "Class 9":
+              window.location.href = "#class-9";
+              break;
+          case "Class 10":
+              window.location.href = "#class-10";
+              break;
+          case "Class 11":
+              window.location.href = "#class-11";
+              break;
+          case "Class 12":
+              window.location.href = "#class-12";
+              break;
+          default:
+              alert("Please select a class");
+              break;
+      }
+  }
+</script>
+<br><br><br><br><br><br>
+<!-- Live Free Workshops on Vedic Mathematics -->
+<section id="live-free-workshops" class="program-container animate">
+  <header>
+    <h2>Live Free Workshops on Vedic Mathematics</h2>
+  </header>
+  <p>Join our series of live free workshops on Vedic Mathematics. Learn ancient techniques and modern applications from experts in the field.</p>
+  <!-- Add links and additional information here -->
+  <h3>Workshop Details:</h3>
+  <p><strong>Duration:</strong> 2 hours each</p>
+  <p><strong>Dates:</strong> March 26th and March 28th</p>
+  <p><strong>Timing:</strong> 6:00 pm to 8:00 pm (GMT)</p>
+  <p><strong>Location:</strong> Online (Zoom)</p>
+  <p><strong>Registration:</strong> No charges. Simply come and join!</p>
+  <p><strong>Zoom ID:</strong> Provided via WhatsApp upon registration</p>
+  <p>Don't miss this opportunity to enhance your mathematical skills. Come and join us for an enriching learning experience!</p>
+  
+  <!-- About Instructor -->
+  <div class="instructor">
+    <img src="./assets/images/sir.png" width="20%" class="teacher" alt="Dr. Rakesh Bhatia">
+    <div class="content">
+      <h3>About Dr. Rakesh Bhatia</h3>
+      <p>Dr. Rakesh Bhatia is a renowned expert in Vedic Mathematics with over 20 years of experience. He holds a Ph.D. in Vedic Maths and has dedicated his career to teaching and promoting this ancient mathematical system.</p>
+      <h4>Educational Experience</h4>
+      <p>Former faculty member at the National Institute of Vedic Mathematics.</p>
+      <p>Author of several acclaimed books on Vedic Mathematics.</p>
+      <p>Conducted numerous workshops and seminars on Vedic Mathematics worldwide.</p>
+    </div>
+  </div>
+  
+  <!-- Registration Button -->
+  <h3>Register Now</h3>
+  <p>Secure your spot for the upcoming workshops. Reserve now to receive the Zoom ID and join us for this exciting learning opportunity!</p>
+  <a href="/Login" class="button">Register Now</a>
+</section>
+
+
+
+<section id="online-certification-programs" class="program-container animate" >
+  <style>
     
-          </div>
-        </div>
+    header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    h1, h2, h3 {
+        margin-top: 20px;
+    }
+   
+    .rating {
+        font-size: 24px;
+        color: #ffc107;
+    }
+    .review-container {
+  display: flex;
+}
+
+.review {
+  margin-right: 10px; /* Add spacing between reviews */
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+/* Ensure the last review doesn't have margin on the right */
+.review:last-child {
+  margin-right: 0;
+}
+    .instructor {
+        margin-top: 30px;
+        text-align: center;
+    }
+    .instructor img {
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+    .teacher {
+  image-rendering: pixelated; /* This property renders the image in a pixelated manner */
+}
+</style>
+<header>
+<h1>Online Certification Programs</h1>
+</header>
+
+<div class="container">
+    <p><strong>Course Duration:</strong> Four Weeks</p>
+    <p><strong>Course Timing:</strong> Live classes on working days from 8:00 pm to 10:00 pm daily. Weekend worksheets will be given as assignments.</p>
+    <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (4.9/5 Stars)</p>
+
+    <!-- Top 3 Reviews -->
+    <h2>Top Reviews</h2>
+    <div  class="review-container">
+    
+    <div class="review">
+      <b><i>TUSHAR KAUSHIK</i></b>
+        <p>"This course has been incredibly helpful for my child. The concepts are explained in a clear and concise manner. Highly recommended!"</p>
+    </div>
+    <div class="review">
+      <b><i>SACHIN</i></b>
+        <p>"Dr. Rakesh Bhatia is an excellent instructor. He makes learning mathematics enjoyable and easy to understand."</p>
+    </div>
+    <div class="review">
+      <b><i>PARAS</i></b>
+        <p>"The course content is comprehensive, and the live classes are interactive. My child's math skills have improved significantly since enrolling."</p>
+    </div>
+  </div>
+    
+    <div id="course-details">
+      <h2>Vedic Maths Course</h2>
+      <p>This course will teach you the principles and techniques of Vedic Mathematics, providing you with valuable skills for mental calculations and problem-solving.</p>
+      <p>To know more details about the course, book a demo class, or purchase it, please visit the detailed page:</p>
+      
+      <button onclick="window.open('./Online_Certification_Programs.html', '_blank')">Visit Course Page</button>
+    </div>
+<!-- Student Learning - Basic to Advance -->
+<section id="student-learning" class="program-container animate">
+  <header>
+    <h2>Student Learning - Basic to Advance</h2>
+  </header>
+  <p>Embark on a journey of comprehensive student learning programs designed to take you from basic concepts to advanced levels of understanding.</p>
+  <!-- Add links and additional information here -->
+  <h3>Live Courses - Class-wise</h3>
+  <p>Explore our live courses tailored to specific class levels:</p>
+  <section>
+  <div class="dropdown">
+    <li class="dropdown">
+      <a class="btn">Live Courses - Class-wise</a>
+      <div class="dropdown-content">
+        <a href="#class-6">Class 6</a>
+        <a href="#class-7">Class 7</a>
+        <a href="#class-8">Class 8</a>
+        <a href="#class-9">Class 9</a>
+        <a href="#class-10">Class 10</a>
+        <a href="#class-11">Class 11</a>
+        <a href="#class-12">Class 12</a>
+      </div>
+    </li>
+  </div>
+  <br><br>
+  <h2>Educational Experience</h2>
+  <p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+    Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+  
+  
+  
+    
+  
+  <p>📅 <strong>New Batch Starting Date:</strong>
+    The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+  
+  <p>🖥️ <strong>Daily Online Classes:</strong>
+    Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+  
+  <p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+  <p>📞 Contact Us for Queries: +919466235578</p>
+  
+  <p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+  </section>
+  <!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 2499 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹2499:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=2499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+</section>
+
+<!-- Ultra Advanced Vedic Maths Techniques -->
+<section id="ultra-advanced-vedic-maths" class="program-container animate">
+  <header>
+    <h2>Ultra Advanced Vedic Maths Techniques</h2>
+  </header>
+  
+  <!-- Course Details -->
+  <h3>Course Details</h3>
+  <p><strong>Course Duration:</strong> Six Weeks</p>
+  <p><strong>Course Timing:</strong> Live classes on weekdays from 7:00 pm to 9:00 pm. Weekly assignments and projects will be provided.</p>
+  <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (5.0/5 Stars)</p>
+
+  <!-- Reviews -->
+  <h3>Top Reviews</h3>
+  <div class="review-container">
+    <div class="review">
+      <b><i>RAHUL</i></b>
+      <p>"This course has revolutionized my approach to mathematics. The techniques taught here are mind-blowing and have significantly improved my problem-solving abilities."</p>
+    </div>
+    <div class="review">
+      <b><i>MEGHNA</i></b>
+      <p>"The instructor's expertise in Vedic Mathematics is unparalleled. The course content is challenging yet rewarding. Highly recommended for anyone looking to master advanced math techniques."</p>
+    </div>
+    <div class="review">
+      <b><i>SHIVAM</i></b>
+      <p>"Enrolling in this course was the best decision I've made for my academic growth. The practical applications of Vedic Maths in real-world scenarios have broadened my perspective."</p>
+    </div>
+  </div>
+  
+  <!-- About Instructor -->
+  <h3>About the Instructor</h3>
+  <div class="instructor">
+    <img src="./assets/images/sir.png" class="teacher" alt="Dr. Rakesh Bhatia">
+    <div class="content">
+      <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+       
+        <h2>Educational Experience</h2>
+        <p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+          Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
         
-    
-        <div class="footer-bottom">
-          <div class="container">
+        
+        
+          
+        
+        <p>📅 <strong>New Batch Starting Date:</strong>
+          The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+        
+        <p>🖥️ <strong>Daily Online Classes:</strong>
+          Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+        
+        <p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+        <p>📞 Contact Us for Queries: +919466235578</p>
+        
+        <p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+        
+    </div>
+</div>
 
-            <style>
-              body {
-                text-align: center;
-              }
-          
-              .centered-text {
-                display: inline-block;
-              }
-            </style>
+
+  <!-- Syllabus -->
+  <h3>Syllabus</h3>
+  <h4>Week 1: Introduction to Ultra Advanced Techniques</h4>
+  <ol>
+    <li>Day 1-2: Overview of advanced Vedic Maths principles</li>
+    <li>Day 3-4: Advanced Addition and Subtraction techniques</li>
+    <li>Day 5: Mastery of Vedic Maths fundamentals</li>
+  </ol>
+  
+  <h4>Week 2: Advanced Multiplication Methods</h4>
+  <ol>
+    <li>Day 6-7: Advanced Multiplication using specific sutras</li>
+    <li>Day 8-9: Multiplication with multi-digit numbers</li>
+    <li>Day 10: Advanced applications of Vedic Maths in multiplication</li>
+  </ol>
+  
+  <!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 5499 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹5499:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=5499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+  <script>
+      // Create a QR code with the UPI payment details
+      const upiId = '9466235578@ybl';
+      const amount = '5499';
+      const transactionNote = 'Payment for Product';
+      const qrData = `upi://pay?pa=${upiId}&pn=YourMerchantName&am=${amount}&tn=${transactionNote}`;
+
+       // Function to reveal the hidden content
+       function revealContent() {
+          const hiddenContent = document.querySelector('.c6');
+          hiddenContent.style.display = 'block';
+      }
+// Function to toggle the hidden content
+function toggleContent() {
+          const hiddenContent = document.querySelector('.c6');
+          if (hiddenContent.style.display === 'none') {
+              hiddenContent.style.display = 'block';
+          } else {
+              hiddenContent.style.display = 'none';
+          }
+      }
+      // Generate the QR code
+      const qrcode = new QRCode(document.getElementById('qrcode'), {
+          text: qrData,
+          width: 200,
+          height: 200,
+      });
+  </script>
+  <!-- Booking Button -->
+  <h3>Book Your Spot</h3>
+  <p>Unlock the secrets of ultra advanced Vedic Mathematics and elevate your mathematical skills to new heights. Reserve your spot now!</p>
+  <a href="/Login" class="button">Book Your Spot</a>
+</section>
+
+<!-- Crack Govt Exams with Ease: Vedic Math Mastery Course! -->
+<section id="crack-govt-exams" class="program-container animate">
+  <header>
+    <h2>Crack Govt Exams with Ease: Vedic Math Mastery Course!</h2>
+  </header>
+  
+  <!-- Course Details -->
+  <h3>Course Details</h3>
+  <p><strong>Course Duration:</strong> Eight Weeks</p>
+  <p><strong>Course Timing:</strong> Live classes on weekdays from 6:00 pm to 8:00 pm and weekends from 10:00 am to 12:00 pm. Regular practice tests and mock exams included.</p>
+  <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (4.8/5 Stars)</p>
+
+  <!-- Reviews -->
+  <h3>Top Reviews</h3>
+  <div class="review-container">
+    <div class="review">
+      <b><i>NEHA</i></b>
+      <p>"This course has been a game-changer for my exam preparation. The techniques taught here are incredibly effective, and the instructors provide excellent support."</p>
+    </div>
+    <div class="review">
+      <b><i>RAJ</i></b>
+      <p>"I highly recommend this course to anyone preparing for govt exams. The course content is comprehensive, and the practice tests are invaluable for assessing my progress."</p>
+    </div>
+    <div class="review">
+      <b><i>ANITA</i></b>
+      <p>"Thanks to this course, I feel much more confident about tackling the math section in govt exams. The instructors are knowledgeable, and the teaching method is engaging."</p>
+    </div>
+  </div>
+  
+  <!-- About Instructor -->
+  <h3>About the Instructor</h3>
+  <div class="instructor">
+    <img src="./assets/images/sir.png" class="teacher" alt="Dr. Rakesh Bhatia">
+    <div class="content">
+      <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+
+      <h2>Educational Experience</h2>
+<p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+  Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+
+
+
+  
+
+<p>📅 <strong>New Batch Starting Date:</strong>
+  The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+
+<p>🖥️ <strong>Daily Online Classes:</strong>
+  Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+
+<p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+<p>📞 Contact Us for Queries: +919466235578</p>
+
+<p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+
+      
+    </div>
+</div>
+
+
+  <!-- Syllabus -->
+  <h3>Syllabus</h3>
+  <h4>Week 1: Introduction to Vedic Maths for Govt Exams</h4>
+  <ol>
+    <li>Day 1-2: Overview of Vedic Maths techniques relevant to govt exams</li>
+    <li>Day 3-4: Quick calculation methods for time and distance problems</li>
+    <li>Day 5: Speedy techniques for solving numerical ability questions</li>
+  </ol>
+  
+  <h4>Week 2: Advanced Problem-Solving Techniques</h4>
+  <ol>
+    <li>Day 6-7: Advanced methods for solving algebraic equations</li>
+    <li>Day 8-9: Strategies for tackling complex arithmetic problems</li>
+    <li>Day 10: Application of Vedic Maths in data interpretation</li>
+  </ol>
+  
+  <!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 4499 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹4499:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=4499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+  <!-- Booking Button -->
+  <h3>Enroll Now</h3>
+  <p>Equip yourself with the essential Vedic Math techniques needed to crack govt exams with ease. Enroll now and pave your way to success!</p>
+  <a href="/Login" class="button">Enroll Now</a>
+</section>
+
+
+<!-- Teacher Training & Certification -->
+<section id="teacher-training" class="program-container animate">
+  <header>
+    <h2>Teacher Training & Certification</h2>
+  </header>
+  
+  <!-- Course Details -->
+  <h3>Course Details</h3>
+  <p><strong>Course Duration:</strong> Twelve Weeks</p>
+  <p><strong>Course Timing:</strong> Live sessions on weekdays from 9:00 am to 12:00 pm. Practical workshops and assignments will be provided.</p>
+  <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (4.9/5 Stars)</p>
+
+  <!-- Reviews -->
+  <h3>Top Reviews</h3>
+  <div class="review-container">
+    <div class="review">
+      <b><i>SMITA</i></b>
+      <p>"This training program has greatly enhanced my teaching skills. The practical workshops were particularly helpful, and the instructors provided valuable feedback."</p>
+    </div>
+    <div class="review">
+      <b><i>RAMESH</i></b>
+      <p>"I highly recommend this certification course to all educators. The course content is relevant, and the instructors are experts in their field."</p>
+    </div>
+    <div class="review">
+      <b><i>ANITA</i></b>
+      <p>"The certification I received from this program has opened up new opportunities for me in my teaching career. Thank you for providing such a valuable learning experience."</p>
+    </div>
+  </div>
+  
+  <!-- About Instructor -->
+  <h3>About the Instructor</h3>
+  <div class="instructor">
+    <img src="./assets/images/sir.png" class="teacher" alt="Dr. Rakesh Bhatia">
+    <div class="content">
+      <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+
+      <h2>Educational Experience</h2>
+      <p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+        Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+      
+      
+      
+        
+      
+      <p>📅 <strong>New Batch Starting Date:</strong>
+        The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+      
+      <p>🖥️ <strong>Daily Online Classes:</strong>
+        Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+      
+      <p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+      <p>📞 Contact Us for Queries: +919466235578</p>
+      
+      <p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+      
+    </div>
+</div>
+
+
+  <!-- Syllabus -->
+  <h3>Syllabus</h3>
+  <h4>Week 1-4: Foundations of Teaching</h4>
+  <ol>
+    <li>Day 1-5: Introduction to teaching methodologies</li>
+    <li>Day 6-10: Classroom management techniques</li>
+    <li>Day 11-15: Effective communication strategies for teachers</li>
+    <li>Day 16-20: Understanding student learning styles</li>
+  </ol>
+  
+  <h4>Week 5-8: Curriculum Development</h4>
+  <ol>
+    <li>Day 21-25: Principles of curriculum design</li>
+    <li>Day 26-30: Developing learning objectives and assessments</li>
+    <li>Day 31-35: Integrating technology in the curriculum</li>
+    <li>Day 36-40: Differentiated instruction techniques</li>
+  </ol>
+  
+  <!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 9499 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹9499:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=9499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+
+  <!-- Booking Button -->
+  <h3>Register Now</h3>
+  <p>Enhance your teaching skills and earn a valuable certification to advance your career in education. Register now and take the first step towards becoming a highly effective educator!</p>
+  <a href="/Login" class="button">Register Now</a>
+
+  <li class="dropdown">
+      <a class="dropbtn">Teacher Training Plan</a>
+      <div class="dropdown-content">
+          <a href="https://drive.google.com/file/d/1mfnRa7QWx4qWV-ndvcv1rZvpTDvKvgbe/view?usp=drive_link" target="_blank">Proposal for Schools</a>
+          <a href="/Login" target="_blank">Proposal for individual learners</a>
+      </div>
+  </li>
+</section>
+
+<!-- Mind Training for Fast Thinking -->
+<section id="mind-training" class="program-container animate">
+  <header>
+    <h2>Mind Training for Fast Thinking</h2>
+  </header>
+  
+  <!-- Course Details -->
+  <h3>Course Details</h3>
+  <p><strong>Course Duration:</strong> Six Weeks</p>
+  <p><strong>Course Timing:</strong> Live sessions on weekdays from 10:00 am to 12:00 pm. Practical exercises and brain games included.</p>
+  <p><strong>Customer Rating:</strong> <span class="rating">★★★★☆</span> (4.5/5 Stars)</p>
+
+  <!-- Reviews -->
+  <h3>Top Reviews</h3>
+  <div class="review-container">
+    <div class="review">
+      <b><i>KRISH</i></b>
+      <p>"This course has significantly improved my cognitive abilities and mental agility. The exercises are challenging yet enjoyable."</p>
+    </div>
+    <div class="review">
+      <b><i>ANANYA</i></b>
+      <p>"I'm amazed at how much sharper my mind has become since enrolling in this program. Highly recommended for anyone looking to boost their thinking speed."</p>
+    </div>
+    <div class="review">
+      <b><i>RAHUL</i></b>
+      <p>"The techniques taught in this course are practical and effective. I've noticed a significant improvement in my problem-solving skills."</p>
+    </div>
+  </div>
+  
+  <!-- About Instructor -->
+  <h3>About the Instructor</h3>
+  <div class="instructor">
+    <img src="./assets/images/sir.png" class="teacher" alt="Dr. Rakesh Bhatia">
+    <div class="content">
+      <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+
+      <h2>Educational Experience</h2>
+      <p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+        Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+      
+      
+      
+        
+      
+      <p>📅 <strong>New Batch Starting Date:</strong>
+        The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+      
+      <p>🖥️ <strong>Daily Online Classes:</strong>
+        Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+      
+      <p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+      <p>📞 Contact Us for Queries: +919466235578</p>
+      
+      <p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+      
+      
+    </div>
+</div>
+
+
+  <!-- Syllabus -->
+  <h3>Syllabus</h3>
+  <h4>Week 1-2: Understanding Cognitive Functions</h4>
+  <ol>
+    <li>Day 1-5: Introduction to cognitive psychology and brain functions</li>
+    <li>Day 6-10: Techniques to improve memory and concentration</li>
+  </ol>
+  
+  <h4>Week 3-4: Enhancing Mental Agility</h4>
+  <ol>
+    <li>Day 11-15: Speed reading and information processing techniques</li>
+    <li>Day 16-20: Problem-solving strategies for quick decision-making</li>
+  </ol>
+  
+  <!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 2999 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹2999:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=2999&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+
+  <!-- Booking Button -->
+  <h3>Join Now</h3>
+  <p>Unlock the full potential of your mind and enhance your thinking speed with our mind training program. Join now and embark on a journey to mental mastery!</p>
+  <a href="/Login" class="button">Join Now</a>
+</section>
+
+<!-- Enhance focus by restricting social media and providing worksheets with detailed analysis -->
+<section id="enhance-focus" class="program-container animate">
+  <header>
+    <h2>Enhance focus using our worksheets with detailed analysis.</h2>
+  </header>
+  
+  <!-- Program Details -->
+  <h3>Program Details</h3>
+  <p><strong>Program Duration:</strong> Six Weeks</p>
+  <p><strong>Program Schedule:</strong> Daily sessions from 9:00 am to 11:00 am. Weekly worksheets will be provided for practice.</p>
+  <p><strong>Participant Feedback:</strong> <span class="rating">★★★★★</span> (4.7/5 Stars)</p>
+
+  <!-- Reviews -->
+  <h3>Participant Reviews</h3>
+  <div class="review-container">
+    <div class="review">
+      <b><i>ANJALI</i></b>
+      <p>"This program helped me break free from distractions and significantly improve my focus. The worksheets with detailed analysis were particularly beneficial in tracking my progress."</p>
+    </div>
+    <div class="review">
+      <b><i>RAJAT</i></b>
+      <p>"I'm amazed at how much more productive I've become since joining this program. The restriction on social media usage combined with the practice worksheets has been a game-changer."</p>
+    </div>
+    <div class="review">
+      <b><i>NEHA</i></b>
+      <p>"The focus enhancement techniques taught in this program are practical and easy to implement. I highly recommend it to anyone struggling with distractions."</p>
+    </div>
+  </div>
+  
+  <!-- About the Facilitator -->
+  <h3>About the Facilitator</h3>
+  <div class="instructor">
     
-            
-              <p class="centered-text"> &copy; 2024 NumericVeda: Vedic Maths Institute. All rights reserved. </p>  
+      <img src="./assets/images/sir.png" class="teacher" alt="Dr. Rakesh Bhatia">
+      <div class="content">
+        <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+
+        <h2>Educational Experience</h2>
+        <p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+          Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+        
+        
+        
           
+        
+        <p>📅 <strong>New Batch Starting Date:</strong>
+          The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+        
+        <p>🖥️ <strong>Daily Online Classes:</strong>
+          Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+        
+        <p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+        <p>📞 Contact Us for Queries: +919466235578</p>
+        
+        <p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+        
+        
+      </div>
+  </div>
+  
+
+  <!-- Program Modules -->
+  <h3>Program Modules</h3>
+  <h4>Week 1-2: Understanding Distractions</h4>
+  <ol>
+    <li>Day 1-5: Identifying common distractions and their impact</li>
+    <li>Day 6-10: Techniques to minimize distractions and improve focus</li>
+  </ol>
+  
+  <h4>Week 3-4: Social Media Detox</h4>
+  <ol>
+    <li>Day 11-15: Implementing strategies to reduce social media usage</li>
+    <li>Day 16-20: Overcoming addiction to social media platforms</li>
+  </ol>
+  
+  <h4>Week 5-6: Practice and Progress Tracking</h4>
+  <ol>
+    <li>Day 21-25: Engaging in focused activities and tasks</li>
+    <li>Day 26-30: Analyzing progress through practice worksheets</li>
+  </ol>
+  <!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 1999 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹1999:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=1999&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+  <!-- Registration Button -->
+  <h3>Join Now</h3>
+  <p>Take control of your focus and productivity. Join the program today and unlock your full potential!</p>
+  <a href="/Login" class="button">Join Now</a>
+</section>
+
+
+
+
+
+
+<section id="class-6" class="program-container animate" >
+ <!-- Section for Class 6 Vedic Mathematics -->
+<header>
+  <h3>Class 6 - Vedic Mathematics</h3>
+</header>
+  <!-- Course Details -->
+  <h2>Course Details</h2>
+  <p><strong>Course Duration:</strong> Four Weeks</p>
+  <p><strong>Course Timing:</strong> Live classes on working days from 8:00 pm to 10:00 pm daily. Weekend worksheets will be given as assignments.</p>
+  <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (4.9/5 Stars)</p>
+
+  
+  <!-- Updated Reviews for Class 6 -->
+  <h2>Top Reviews for Class 6</h2>
+  <div class="review-container">
+    <div class="review">
+      <b><i>ANANYA</i></b>
+      <p>"This course has made math so much easier for my child. The teaching method is excellent, and the concepts are explained very well."</p>
+    </div>
+    <div class="review">
+      <b><i>RISHABH</i></b>
+      <p>"My child's confidence in math has increased significantly after taking this course. The interactive sessions and clear explanations are highly commendable."</p>
+    </div>
+    <div class="review">
+      <b><i>SHREYA</i></b>
+      <p>"I'm amazed at how quickly my child has grasped the concepts taught in this course. The syllabus is comprehensive, and the instructors are very supportive."</p>
+    </div>
+  </div>
+  
+  <!-- Updated Syllabus for Class 6 -->
+  <h2>Syllabus for Class 6</h2>
+  <p>Week 1: Introduction to Basic Vedic Mathematics</p>
+  <ol>
+    <li>Day 1-2: Introduction to Vedic Maths principles</li>
+    <li>Day 3-4: Addition and Subtraction techniques</li>
+    <li>Day 5: Multiplication basics</li>
+  </ol>
+  
+  <h2>Week 2: Advanced Techniques</h2>
+  <p>Days 6-10: Multiplication using specific sutras</p>
+  <ol>
+    <li>Day 6-7: Multiplication using "Nikhilam" sutra</li>
+    <li>Day 8-9: Multiplication using "Urdhva-Tiryagbhyam" sutra</li>
+    <li>Day 10: Multiplication of numbers with several digits</li>
+  </ol>
+  
+  <h2>Week 3: Division and Factorization</h2>
+  <p>Days 11-15: Division techniques and Factorization</p>
+  <ol>
+    <li>Day 11-12: Division using "Paravartya" sutra</li>
+    <li>Day 13-14: Factorization of numbers</li>
+    <li>Day 15: Application of techniques in real-world problems</li>
+  </ol>
+  
+  <h2>Week 4: Practice and Revision</h2>
+  <p>Days 16-20: Practice sessions and Revision</p>
+  <ol>
+    <li>Day 16-17: Recap of all techniques learned</li>
+    <li>Day 18-19: Solving practice problems</li>
+    <li>Day 20: Mock tests and assessment</li>
+  </ol>
+  
+  <!-- Free Demo Information -->
+  <h2>Free Demo</h2>
+  <a href="/Login" style="color: blue;">Before Enrolling, book a free demo session to experience the benefits:</a>
+  <ul>
+    <li>* Experience interactive teaching methods</li>
+    <li>* Get to know the instructors</li>
+    <li>* Understand the course structure</li>
+    <li>* Assess your child's learning needs</li>
+    <li>* Ask any questions you may have</li>
+  </ul>
+</div>
+<div class="instructor">
+  <img src="./assets/images/sir.png" width="20%" class="teacher" alt="Dr. Rakesh Bhatia">
+  <div class="content">
+    <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+    <h2>Educational Experience</h2>
+<p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+  Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+
+
+
+  
+
+<p>📅 <strong>New Batch Starting Date:</strong>
+  The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+
+<p>🖥️ <strong>Daily Online Classes:</strong>
+  Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+
+<p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+<p>📞 Contact Us for Queries: +919466235578</p>
+
+<p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+
+  </div>
+</div>
+<!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 2499 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹2499:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=2499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+<!-- Booking Button -->
+<h2>Book Your Free Demo Class</h2>
+<p>Don't miss this opportunity to experience the power of Vedic Mathematics. Reserve your spot now!</p>
+<a href="/Login" class="button">Book Your Free Demo Class</a>
+</div>
+
+</section>
+
+<section id="class-7" class="program-container animate" >
+    <header>
+      <h3>Class 7 - Vedic Mathematics</h3>
+    </header>
+  
+    <!-- Course Details -->
+    <h2>Course Details</h2>
+    <p><strong>Course Duration:</strong> Four Weeks</p>
+    <p><strong>Course Timing:</strong> Live classes on working days from 8:00 pm to 10:00 pm daily. Weekend worksheets will be given as assignments.</p>
+    <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (4.9/5 Stars)</p>
+  
+    <!-- Top Reviews for Class 7 -->
+    <h2>Top Reviews for Class 7</h2>
+    <div class="review-container">
+      <div class="review">
+        <b><i>KRISH</i></b>
+        <p>"My child has shown remarkable improvement in math since starting this course. The teaching style is engaging, and the concepts are well-explained."</p>
+      </div>
+      <div class="review">
+        <b><i>MIRA</i></b>
+        <p>"I'm impressed with the quality of instruction provided in this course. My child now enjoys math and is more confident in tackling mathematical problems."</p>
+      </div>
+      <div class="review">
+        <b><i>RAJ</i></b>
+        <p>"This course has helped my child build a strong foundation in math. The syllabus is structured well, and the instructors are very supportive."</p>
+      </div>
+    </div>
     
+    <!-- Syllabus for Class 7 -->
+    <h2>Syllabus for Class 7</h2>
+    <!-- Syllabus details here -->
+  
+    <!-- Instructor Information -->
+    <div class="instructor">
+      <img src="./assets/images/sir.png" width="20%" class="teacher" alt="Dr. Rakesh Bhatia">
+      <div class="content">
+        <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+        <h2>Educational Experience</h2>
+        <p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+          Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+        
+        
+        
+          
+        
+        <p>📅 <strong>New Batch Starting Date:</strong>
+          The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+        
+        <p>🖥️ <strong>Daily Online Classes:</strong>
+          Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+        
+        <p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+        <p>📞 Contact Us for Queries: +919466235578</p>
+        
+        <p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+        
+      </div>
+    </div>
+  <!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 2499 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹2499:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=2499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+
+    <!-- Booking Button -->
+    <h2>Book Your Free Demo Class</h2>
+    <p>Don't miss this opportunity to experience the power of Vedic Mathematics. Reserve your spot now!</p>
+    <a href="/Login" class="button">Book Your Free Demo Class</a>
+  </section>
+  
+
+
+<!-- Class 8 Vedic Mathematics -->
+<section id="class-8" class="program-container animate">
+  <header>
+    <h3>Class 8 - Vedic Mathematics</h3>
+  </header>
+  
+  <!-- Course Details -->
+  <h2>Course Details</h2>
+  <p><strong>Course Duration:</strong> Four Weeks</p>
+  <p><strong>Course Timing:</strong> Live classes on working days from 8:00 pm to 10:00 pm daily. Weekend worksheets will be given as assignments.</p>
+  <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (4.9/5 Stars)</p>
+
+  <!-- Top Reviews -->
+  <h2>Top Reviews for Class 8</h2>
+  <div class="review-container">
+    <div class="review">
+      <b><i>SAMARTH</i></b>
+      <p>"The course material is comprehensive, and the instructors are knowledgeable. My child has gained a deeper understanding of math concepts."</p>
+    </div>
+    <div class="review">
+      <b><i>ANISHA</i></b>
+      <p>"The teaching method is excellent, and the interactive sessions have made math more enjoyable for my child. Highly recommended!"</p>
+    </div>
+    <div class="review">
+      <b><i>RAJEEV</i></b>
+      <p>"This course has helped my child build a strong foundation in math. The instructors are very supportive and provide personalized attention."</p>
+    </div>
+  </div>
+  
+  <!-- Syllabus -->
+  <h2>Syllabus for Class 8</h2>
+  <!-- Syllabus details here -->
+
+  <!-- Instructor Information -->
+  <div class="instructor">
+    <img src="./assets/images/sir.png" width="20%" class="teacher" alt="Dr. Rakesh Bhatia">
+    <div class="content">
+      <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+      <h2>Educational Experience</h2>
+      <p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+        Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+      
+      
+      
+        
+      
+      <p>📅 <strong>New Batch Starting Date:</strong>
+        The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+      
+      <p>🖥️ <strong>Daily Online Classes:</strong>
+        Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+      
+      <p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+      <p>📞 Contact Us for Queries: +919466235578</p>
+      
+      <p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+      
+    </div>
+  </div>
+<!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 2499 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹2499:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=2499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+
+  <!-- Booking Button -->
+  <h2>Book Your Free Demo Class</h2>
+  <p>Don't miss this opportunity to experience the power of Vedic Mathematics. Reserve your spot now!</p>
+  <a href="/Login" class="button">Book Your Free Demo Class</a>
+</section>
+<!-- Class 9 Vedic Mathematics -->
+<section id="class-9" class="program-container animate">
+  <header>
+    <h3>Class 9 - Vedic Mathematics</h3>
+  </header>
+  
+  <!-- Course Details -->
+  <h2>Course Details</h2>
+  <p><strong>Course Duration:</strong> Four Weeks</p>
+  <p><strong>Course Timing:</strong> Live classes on working days from 8:00 pm to 10:00 pm daily. Weekend worksheets will be given as assignments.</p>
+  <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (4.9/5 Stars)</p>
+
+  <!-- Top Reviews -->
+  <h2>Top Reviews for Class 9</h2>
+  <div class="review-container">
+    <div class="review">
+      <b><i>NEHA</i></b>
+      <p>"The course has greatly improved my child's math skills. The instructors are patient and provide clear explanations."</p>
+    </div>
+    <div class="review">
+      <b><i>ROHAN</i></b>
+      <p>"My child struggled with math before taking this course, but now he's more confident and enjoys solving math problems."</p>
+    </div>
+    <div class="review">
+      <b><i>ANJALI</i></b>
+      <p>"The syllabus is well-structured, and the instructors use effective teaching methods. My child's understanding of math has improved significantly."</p>
+    </div>
+  </div>
+  
+  <!-- Syllabus -->
+  <h2>Syllabus for Class 9</h2>
+  <h3>Week 1: Introduction to Basic Vedic Mathematics</h3>
+  <ol>
+    <li>Day 1-2: Introduction to Vedic Maths principles</li>
+    <li>Day 3-4: Addition and Subtraction techniques</li>
+    <li>Day 5: Multiplication basics</li>
+  </ol>
+  
+  <h3>Week 2: Advanced Techniques</h3>
+  <ol>
+    <li>Day 6-7: Multiplication using "Nikhilam" sutra</li>
+    <li>Day 8-9: Multiplication using "Urdhva-Tiryagbhyam" sutra</li>
+    <li>Day 10: Multiplication of numbers with several digits</li>
+  </ol>
+  
+  <h3>Week 3: Division and Factorization</h3>
+  <ol>
+    <li>Day 11-12: Division using "Paravartya" sutra</li>
+    <li>Day 13-14: Factorization of numbers</li>
+    <li>Day 15: Application of techniques in real-world problems</li>
+  </ol>
+  
+  <h3>Week 4: Practice and Revision</h3>
+  <ol>
+    <li>Day 16-17: Recap of all techniques learned</li>
+    <li>Day 18-19: Solving practice problems</li>
+    <li>Day 20: Mock tests and assessment</li>
+  </ol>
+
+  <!-- Instructor Information -->
+  <div class="instructor">
+    <img src="./assets/images/sir.png" width="20%" class="teacher" alt="Dr. Rakesh Bhatia">
+    <div class="content">
+      <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+      <h2>Educational Experience</h2>
+<p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+  Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+
+
+
+  
+
+<p>📅 <strong>New Batch Starting Date:</strong>
+  The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+
+<p>🖥️ <strong>Daily Online Classes:</strong>
+  Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+
+<p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+<p>📞 Contact Us for Queries: +919466235578</p>
+
+<p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+
+    </div>
+  </div>
+<!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 2499 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹2499:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=2499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+
+  <!-- Booking Button -->
+  <h2>Book Your Free Demo Class</h2>
+  <p>Don't miss this opportunity to experience the power of Vedic Mathematics. Reserve your spot now!</p>
+  <a href="/Login" class="button">Book Your Free Demo Class</a>
+</section>
+
+
+<!-- Class 10 Vedic Mathematics -->
+<section id="class-10" class="program-container animate">
+  <header>
+    <h3>Class 10 - Vedic Mathematics</h3>
+  </header>
+  
+  <!-- Course Details -->
+  <h2>Course Details</h2>
+  <p><strong>Course Duration:</strong> Four Weeks</p>
+  <p><strong>Course Timing:</strong> Live classes on working days from 8:00 pm to 10:00 pm daily. Weekend worksheets will be given as assignments.</p>
+  <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (4.9/5 Stars)</p>
+
+  <!-- Top Reviews -->
+  <h2>Top Reviews for Class 10</h2>
+  <div class="review-container">
+    <div class="review">
+      <b><i>RAHUL</i></b>
+      <p>"This course has been incredibly beneficial for my child. The instructors are knowledgeable, and the teaching method is engaging."</p>
+    </div>
+    <div class="review">
+      <b><i>PRIYA</i></b>
+      <p>"My child struggled with math before enrolling in this course, but now he finds it much easier. Highly recommended!"</p>
+    </div>
+    <div class="review">
+      <b><i>KAVYA</i></b>
+      <p>"The syllabus is comprehensive, and the instructors provide excellent support. My child's confidence in math has significantly increased."</p>
+    </div>
+  </div>
+  
+  <!-- Syllabus -->
+  <h2>Syllabus for Class 10</h2>
+  <h3>Week 1: Introduction to Advanced Vedic Mathematics</h3>
+  <ol>
+    <li>Day 1-2: Introduction to advanced Vedic Maths principles</li>
+    <li>Day 3-4: Advanced techniques in Addition and Subtraction</li>
+    <li>Day 5: Introduction to Vedic Mathematics sutras</li>
+  </ol>
+  
+  <h3>Week 2: Advanced Multiplication Techniques</h3>
+  <ol>
+    <li>Day 6-7: Multiplication using "Urdhva-Tiryagbhyam" sutra</li>
+    <li>Day 8-9: Multiplication using "Nikhilam" sutra</li>
+    <li>Day 10: Multiplication of numbers with multiple digits</li>
+  </ol>
+  
+  <h3>Week 3: Advanced Division and Factorization</h3>
+  <ol>
+    <li>Day 11-12: Division using "Paravartya" sutra</li>
+    <li>Day 13-14: Factorization of complex numbers</li>
+    <li>Day 15: Advanced application of techniques</li>
+  </ol>
+  
+  <h3>Week 4: Practice and Revision</h3>
+  <ol>
+    <li>Day 16-17: Recap of all techniques learned</li>
+    <li>Day 18-19: Solving advanced practice problems</li>
+    <li>Day 20: Mock tests and assessment</li>
+  </ol>
+
+  <!-- Instructor Information -->
+  <div class="instructor">
+    <img src="./assets/images/sir.png" width="20%" class="teacher" alt="Dr. Rakesh Bhatia">
+    <div class="content">
+      <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+      <h2>Educational Experience</h2>
+      <p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+        Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+      
+      
+      
+        
+      
+      <p>📅 <strong>New Batch Starting Date:</strong>
+        The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+      
+      <p>🖥️ <strong>Daily Online Classes:</strong>
+        Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+      
+      <p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+      <p>📞 Contact Us for Queries: +919466235578</p>
+      
+      <p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+      
+    </div>
+  </div>
+<!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 2499 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹2499:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=2499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+
+  <!-- Booking Button -->
+  <h2>Book Your Free Demo Class</h2>
+  <p>Don't miss this opportunity to experience the power of Vedic Mathematics. Reserve your spot now!</p>
+  <a href="/Login" class="button">Book Your Free Demo Class</a>
+</section>
+
+
+<!-- Class 11 Vedic Mathematics -->
+<section id="class-11" class="program-container animate">
+  <header>
+    <h3>Class 11 - Vedic Mathematics</h3>
+  </header>
+  
+  <!-- Course Details -->
+  <h2>Course Details</h2>
+  <p><strong>Course Duration:</strong> Four Weeks</p>
+  <p><strong>Course Timing:</strong> Live classes on working days from 8:00 pm to 10:00 pm daily. Weekend worksheets will be given as assignments.</p>
+  <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (4.9/5 Stars)</p>
+
+  <!-- Top Reviews -->
+  <h2>Top Reviews for Class 11</h2>
+  <div class="review-container">
+    <div class="review">
+      <b><i>ARJUN</i></b>
+      <p>"The course has been invaluable in preparing for my exams. The instructors are knowledgeable and provide excellent support."</p>
+    </div>
+    <div class="review">
+      <b><i>PRIYA</i></b>
+      <p>"This course has made complex math topics much easier to understand. The teaching method is effective and engaging."</p>
+    </div>
+    <div class="review">
+      <b><i>VINAY</i></b>
+      <p>"I highly recommend this course to anyone struggling with math. The syllabus is comprehensive, and the instructors are very supportive."</p>
+    </div>
+  </div>
+  
+  <!-- Syllabus -->
+  <h2>Syllabus for Class 11</h2>
+  <h3>Week 1: Introduction to Advanced Vedic Mathematics</h3>
+  <ol>
+    <li>Day 1-2: Advanced Vedic Maths principles</li>
+    <li>Day 3-4: Advanced techniques for addition and subtraction</li>
+    <li>Day 5: Introduction to advanced multiplication methods</li>
+  </ol>
+  
+  <h3>Week 2: Multiplication Techniques</h3>
+  <ol>
+    <li>Day 6-7: Multiplication using "Nikhilam" sutra for large numbers</li>
+    <li>Day 8-9: Multiplication using "Urdhva-Tiryagbhyam" sutra for complex numbers</li>
+    <li>Day 10: Multiplication of algebraic expressions</li>
+  </ol>
+  
+  <h3>Week 3: Division and Factorization</h3>
+  <ol>
+    <li>Day 11-12: Division using "Paravartya" sutra for polynomials</li>
+    <li>Day 13-14: Factorization of algebraic expressions</li>
+    <li>Day 15: Solving quadratic equations using Vedic Mathematics</li>
+  </ol>
+  
+  <h3>Week 4: Advanced Applications</h3>
+  <ol>
+    <li>Day 16-17: Applications in trigonometry and calculus</li>
+    <li>Day 18-19: Solving complex problems using Vedic Mathematics</li>
+    <li>Day 20: Mock tests and assessment for exam preparation</li>
+  </ol>
+
+  <!-- Instructor Information -->
+  <div class="instructor">
+    <img src="./assets/images/sir.png" width="20%" class="teacher" alt="Dr. Rakesh Bhatia">
+    <div class="content">
+      <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+      <h2>Educational Experience</h2>
+<p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+  Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+
+
+
+  
+
+<p>📅 <strong>New Batch Starting Date:</strong>
+  The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+
+<p>🖥️ <strong>Daily Online Classes:</strong>
+  Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+
+<p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+<p>📞 Contact Us for Queries: +919466235578</p>
+
+<p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+
+    </div>
+  </div>
+<!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 2499 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹2499:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=2499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+
+  <!-- Booking Button -->
+  <h2>Book Your Free Demo Class</h2>
+  <p>Don't miss this opportunity to experience the power of Vedic Mathematics. Reserve your spot now!</p>
+  <a href="/Login" class="button">Book Your Free Demo Class</a>
+</section>
+
+<!-- Class 12 Vedic Mathematics -->
+<section id="class-12" class="program-container animate">
+  <header>
+    <h3>Class 12 - Vedic Mathematics</h3>
+  </header>
+  
+  <!-- Course Details -->
+  <h2>Course Details</h2>
+  <p><strong>Course Duration:</strong> Four Weeks</p>
+  <p><strong>Course Timing:</strong> Live classes on working days from 8:00 pm to 10:00 pm daily. Weekend worksheets will be given as assignments.</p>
+  <p><strong>Customer Rating:</strong> <span class="rating">★★★★★</span> (4.9/5 Stars)</p>
+
+  <!-- Top Reviews -->
+  <h2>Top Reviews for Class 12</h2>
+  <div class="review-container">
+    <div class="review">
+      <b><i>ARJUN</i></b>
+      <p>"The course has been immensely helpful in preparing for my board exams. The instructors are knowledgeable and provide valuable insights."</p>
+    </div>
+    <div class="review">
+      <b><i>KRITIKA</i></b>
+      <p>"I highly recommend this course to all 12th graders. The syllabus covers essential topics, and the instructors make learning enjoyable."</p>
+    </div>
+    <div class="review">
+      <b><i>RISHI</i></b>
+      <p>"Vedic Mathematics has helped me improve my problem-solving skills and speed. The course material is comprehensive and well-structured."</p>
+    </div>
+  </div>
+  
+  <!-- Syllabus -->
+  <h2>Syllabus for Class 12</h2>
+  <h3>Week 1: Revision of Fundamentals</h3>
+  <ol>
+    <li>Day 1-2: Recap of basic Vedic Maths principles</li>
+    <li>Day 3-4: Advanced techniques in addition and subtraction</li>
+    <li>Day 5: Review of multiplication basics</li>
+  </ol>
+  
+  <h3>Week 2: Advanced Techniques in Multiplication</h3>
+  <ol>
+    <li>Day 6-7: Multiplication using "Nikhilam" sutra</li>
+    <li>Day 8-9: Multiplication using "Urdhva-Tiryagbhyam" sutra</li>
+    <li>Day 10: Multiplication of numbers with several digits</li>
+  </ol>
+  
+  <h3>Week 3: Division and Factorization</h3>
+  <ol>
+    <li>Day 11-12: Division using "Paravartya" sutra</li>
+    <li>Day 13-14: Factorization of numbers</li>
+    <li>Day 15: Application of techniques in solving complex problems</li>
+  </ol>
+  
+  <h3>Week 4: Practice and Exam Preparation</h3>
+  <ol>
+    <li>Day 16-17: Solving practice problems and exercises</li>
+    <li>Day 18-19: Mock tests and assessment</li>
+    <li>Day 20: Final revision and exam strategies</li>
+  </ol>
+
+  <!-- Instructor Information -->
+  <div class="instructor">
+    <img src="./assets/images/sir.png" width="20%" class="teacher" alt="Dr. Rakesh Bhatia">
+    <div class="content">
+      <h2><a href="./sir.html" style="color: blue;">Introduction to Dr. Rakesh Bhatia</a></h2>
+      <h2>Educational Experience</h2>
+<p>🎓 About <strong>Dr. Rakesh Bhatia:</strong>
+  Dr. Rakesh Bhatia is a renowned mathematics educator with over 22 years of experience. He holds a Ph.D. in Vedic Mathematics and has been teaching at Vidya Bhartiya Akhil Bhartiya Shiksha Sansthan, New Delhi, for over two decades. Dr. Bhatia has conducted over 700 workshops on Vedic Mathematics in India and abroad, and he is the author of several acclaimed mathematics textbooks.</p>
+
+
+
+  
+
+<p>📅 <strong>New Batch Starting Date:</strong>
+  The upcoming batch will commence within 15 days of payment. You'll receive notification on your personal WhatsApp number. Make sure to stay updated by following our WhatsApp group.</p>
+
+<p>🖥️ <strong>Daily Online Classes:</strong>
+  Upon payment completion, you'll receive the Zoom ID and password for accessing our daily online classes.</p>
+
+<p>🔗 Join WhatsApp Group for Updates: <a href="https://bit.ly/49pI5tl">https://bit.ly/49pI5tl</a></p>
+<p>📞 Contact Us for Queries: +919466235578</p>
+
+<p>Don't miss this opportunity to enhance your mathematical skills with Vedic.</p>
+
+    </div>
+  </div>
+<!-- paymentupi -->
+  
+
+<button class="c5" onclick="toggleContent()">Make Payment: Rs. 2499 (limited-time offer)</button>
+<div class="c6">
+  <div class="c1">
+      <h1 class="c2">Send Money via UPI</h1>
+      <p class="c3">Scan the QR code below or click the button to make a payment of ₹2499:</p>
+      <div class="c4" id="qrcode"></div>
+      <a href="upi://pay?pa=9466235578@ybl&pn=YourMerchantName&am=2499&tn=Payment for Product" class="c5">Click here to pay via UPI</a>
+  
+  <p class="c3">📲 After Payment:</p>
+  <p class="c3">💳 <strong>
+  Please share a screenshot of your payment confirmation on WhatsApp.<br> Our team will contact you within 1 hour of payment receipt. Rest assured, your funds are secure with us.
+</strong></p>
+</div>
+</div>
+
+  <!-- Booking Button -->
+  <h2>Book Your Free Demo Class</h2>
+  <p>Don't miss this opportunity to experience the power of Vedic Mathematics. Reserve your spot now!</p>
+  <a href="/Login" class="button">Book Your Free Demo Class</a>
+</section>
+
+
+<script>
+
+
+  // Function to extract the score parameter from the URL
+  function getScoreFromURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const score = urlParams.get('score');
+      return score;
+  }
+
+  // Function to auto-fill the score field from the URL parameter
+  function autoFillScore() {
+      const score = getScoreFromURL();
+      if (score !== null) {
+          document.getElementById('score').value = score;
+      }
+  }
+
+  // Call the function to auto-fill the score field when the page loads
+  window.onload = autoFillScore;
+
+  function recommendCourse() {
+      var score = document.getElementById('score').value;
+      var resultElement = document.getElementById('result');
+      var recommendation;
+
+      if (score >= 0 && score <= 10) {
+          recommendation = "Embark on your learning journey by exploring our 'Basic to Advance' course, an ideal starting point to build a strong foundation.";
+      } else if (score > 10 && score <= 60) {
+          recommendation = "You've got a solid grasp of the basics, making you ready to dive into our advanced course that aligns perfectly with your interests.";
+      } else if (score > 60) {
+          recommendation = "Congratulations on your impressive score! Delve into our ultra-advanced courses tailored for high achievers like you.";
+      } else {
+          recommendation = "Invalid score. Please enter a valid score.";
+      }
+
+      resultElement.textContent = recommendation;
+  }
+</script>
+<!-- 
+      - #FOOTER
+    -->
+  
+    <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+  
+      <div class="footer-top section">
+        <div class="container grid-list">
+  
+          <div class="footer-brand">
+  
+            <a href="#" class="logo">
+              <img src="./assets/images/NUMERICVEDAPNG.png" width="162" height="50" alt="numericveda logo">
+            </a>
+  
+            <p class="footer-brand-text">
+              Master Vedic Maths: Students excel, educators innovate, and exam aspirants thrive. Elevate your skills for a brighter future with us!
+            </p>
+  
+            <div class="wrapper">
+              <span class="span">Add:</span>
+  
+              <address class="address">Rohtak, Haryana</address>
+            </div>
+  
+            <div class="wrapper">
+              <span class="span">Call:</span>
+  
+              <a href="tel:9466235578" class="footer-link">9466235578</a>
+            </div>
+  
+            <div class="wrapper">
+              <span class="span">Email:</span>
+  
+              <a href="mailto:rakeshbhatia106@gmail.com" class="footer-link">rakeshbhatia106@gmail.com</a>
+            </div>
+  
           </div>
+  
+          <ul class="footer-list">
+  
+            <li>
+              <p class="footer-list-title">Online Platform</p>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">About</a>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">Courses</a>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">Instructor</a>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">Events</a>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">Instructor Profile</a>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">Purchase Guide</a>
+            </li>
+  
+          </ul>
+  
+          <ul class="footer-list">
+  
+            <li>
+              <p class="footer-list-title">Links</p>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">Contact Us</a>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">Gallery</a>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">News & Articles</a>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">FAQ's</a>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">Sign In/Registration</a>
+            </li>
+  
+            <li>
+              <a href="#" class="footer-link">Coming Soon</a>
+            </li>
+  
+          </ul>
+  
+          <div class="footer-list">
+  
+            <p class="footer-list-title">Contacts</p>
+  
+            <p class="footer-list-text">
+              Enter your email address to register to our newsletter subscription
+            </p>
+  
+            <form action="" class="newsletter-form">
+              <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+  
+              <button type="submit" class="btn has-before">
+                <span class="span">Subscribe</span>
+  
+                <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </form>
+
+          </div>
+  
         </div>
-    
-      </footer>
-    
-    
-    
-    
-    
-      <!-- 
-        - #BACK TO TOP
-      -->
-    
-      <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
-        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
-      </a>
-    
-    
-    
-    
-    
-      <!-- 
-        - custom js link
-      -->
-      <!-- <script src="./assets/js/script.js" defer></script> -->
-    
-      <!-- 
-        - ionicon link
-      -->
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
-      <id="top">
-        <!-- whatsapp -->
-        <div class="whatsapp">
-          <a href="https://wa.me/919466235578" target="_blank"> <!-- Replace the href with your WhatsApp link -->
-              <!-- You can use a WhatsApp icon image or any text/icon of your choice -->
-          <img src="./assets/images/whatsapp_icon.png" width="50" height="50">
-        </a>
       </div>
       
+  
+      <div class="footer-bottom">
+        <div class="container">
 
-  </body>
+          <style>
+            body {
+              text-align: center;
+            }
+        
+            .centered-text {
+              display: inline-block;
+            }
+          </style>
+  
+          
+            <p class="centered-text"> &copy; 2024 NumericVeda: Vedic Maths Institute. All rights reserved. </p>  
+        
+  
+        </div>
+      </div>
+  
+    </footer>
+  
+  
+  
+  
+  
+    <!-- 
+      - #BACK TO TOP
+    -->
+  
+    <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+      <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+  
+  
+  
+  
+  
+    <!-- 
+      - custom js link
+    -->
+    <!-- <script src="./assets/js/script.js" defer></script> -->
+  
+    <!-- 
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+    <id="top">
+      <!-- whatsapp -->
+      <div class="whatsapp">
+        <a href="https://wa.me/919466235578" target="_blank"> <!-- Replace the href with your WhatsApp link -->
+            <!-- You can use a WhatsApp icon image or any text/icon of your choice -->
+        <img src="./assets/images/whatsapp_icon.png" width="50" height="50">
+      </a>
+    </div>
+    
+
+</body>
 </html>
+
 

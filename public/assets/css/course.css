@@ -1,0 +1,255 @@
+body.dark-theme {
+    background-color: #0074D9;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .program-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .section-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+  h2, h3, h4 {
+    color: #fff;
+  }
+  
+  .review-slider {
+    margin-bottom: 20px;
+  }
+  
+  .review {
+    padding: 20px;
+  }
+  
+  .review p {
+    margin-top: 10px;
+  }
+  
+  .review b {
+    color: #4caf50;
+  }
+  
+  .teacher {
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .content {
+    flex: 1;
+  }
+  
+  .payment-btn {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .payment-details {
+    display: none;
+  }
+  
+  .payment-details.show {
+    display: block;
+  }
+  
+  .qr-code {
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2196f3;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .button:hover {
+    background-color: #0b7dda;
+  }
+  
+  /* Banner Styles */
+
+  
+  .banner-container {
+  background: linear-gradient(to bottom, rgb(49, 49, 252) 50%, rgb(15, 27, 182) 50%);
+  color: white; /* Text color */
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  height: 200px; /* Adjust as needed */
+}
+
+
+.banner-heading {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+/* Container for payment section */
+.c1 {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading styles */
+.c2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Paragraph styles */
+.c3 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* QR code container */
+.c4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Payment link styles */
+.c5 {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.c5:hover {
+    background-color: #0056b3;
+}
+.c6 {
+      display: none;
+  }
+/* Styles for Syllabus PDF Section */
+.syllabus-pdf-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.syllabus-pdf-container header h2 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.syllabus-pdf-container p {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.syllabus-pdf-container .button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2196f3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.syllabus-pdf-container .button:hover {
+  background-color: #0b7dda;
+}
+.rating {
+  color: yellow;
+}
+.whatsapp {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 9999; /* Ensure it appears on top of other elements */
+}
+.whatsapp img {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    border-radius: 20%; /* Makes the icon circular */
+    border: 1px solid #5bfd55; /* Optional: Add border around the icon */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for better visibility */
+}
+.message-container {
+    position: absolute;
+    bottom: 60px; /* Adjust as needed */
+    right: 70px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; /* Background color for message container */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+}
+
+.message-container img {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+.message-container p {
+    margin: 0;
+    font-size: 14px;
+    color: #000000; /* Text color for the message */
+}
+
+/* Optional: CSS animation for lady icon */
+@keyframes ladyIconMotion {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.message-container img {
+    animation: ladyIconMotion 2s infinite; /* Adjust animation duration and timing as needed */
+}

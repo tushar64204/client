@@ -1,18 +1,4 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
 
-/**
- * copyright 2022 codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
 
@@ -620,7 +606,7 @@ body {
   line-height: 25px;
   padding-inline: 10px;
 }
-
+.card-title{color: #333;}
 .course-card .card-title {
   display: -webkit-box;
   -webkit-box-orient: vertical;

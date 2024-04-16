@@ -121,7 +121,7 @@
     
     <!-- dropdown menu  -->
     
-    <title>Programs - NumericVeda Institute</title>
+    <title>Courses - NumericVeda Institute</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -193,6 +193,7 @@
     
   </head>
   <body>
+    
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -206,78 +207,103 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <hr>
-    <style>
-      .slidingSlides {
-        display: none;
-        width: 100%;
-        height: auto; /* Adjust height to maintain aspect ratio */
-      }
-      hr {
-  border: none; /* Remove default border */
-  height: 4px; /* Set the height */
-  background-color: black; /* Set the color */
-  margin: 20px 0; /* Adjust margin as needed */
-}
+  
+    <div class="container">
 
+      <nav class="navbar" data-navbar>
+  
+        
+        </div>
+  
+        <ul class="navbar-list">
+  
+          <a href="/Login" target="_blank" class="btn">Book Your Class</a>
+      
+          <li class="dropdown"><a href="./aboutus.html" target="_blank" class="dropbtn">About</a></li>
+      
+          <li class="dropdown"><a href="./message.html" target="_blank" class="dropbtn">messageUs</a></li>
+      
+          <li class="dropdown"><a href="./gallery.html" target="_blank" class="dropbtn">Gallery</a></li>
+      
+          <li class="dropdown">
+              <a class="dropbtn">Courses</a>
+              <div class="dropdown-content" style="z-index: 30;">
+                  
+                  
+                  <a href="./schedule.html" target="_blank">Live Learning Courses</a>
+                  <a href="./course.html" target="_blank">Certification Courses</a>
+              </div>
+          </li>
+      
+          <li class="dropdown"><a href="./vedicmaths.html" target="_blank" class="dropbtn">Textbooks</a>
+      
+          <li class="dropdown"><a href="./Journals.html" target="_blank" class="dropbtn">Journal</a></li>
+      
+          <!-- Add other menu items here -->
+      
+      </ul>
+      
+      
+      </nav>      
+      <style>
+        .thumbcontainer {
+          position: relative;
+        }
     
-      .sliding-container {
-        position: relative;
-        overflow: hidden; /* Ensure images don't overflow */
-      }
+        .sliding-container {
+          position: relative;
+          max-width: 100%;
+          overflow: hidden; /* Ensure the banners do not overflow */
+        }
     
-      .sliding-center {
-        position: absolute;
-        bottom: 10px; /* Adjust as needed */
-        width: 100%;
-        text-align: center;
-      }
+        .sliding-thumbnails {
+          position: absolute;
+          top: calc(100% + 20px); /* Position thumbnails below the slides */
+          left: 50%; /* Align thumbnails to the center horizontally */
+          transform: translateX(-50%);
+          z-index: 10; /* Ensure thumbnails are above the banners */
+        }
     
-      .slide-left,
-      .slide-right {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        color: white; /* Ensure visibility */
-      }
+        .thumbnail {
+          display: inline-block;
+          width: 100px; /* Adjust thumbnail size */
+          height: auto; /* Maintain aspect ratio */
+          margin: 10px; /* Adjust spacing */
+          cursor: pointer;
+        }
     
-      .slide-left {
-        left: 10px; /* Adjust as needed */
-      }
+        .thumbnail img {
+          width: 100%; /* Make sure thumbnails fill their container */
+          height: auto;
+          border: 4px solid transparent; /* Add border for visibility */
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+        }
     
-      .slide-right {
-        right: 10px; /* Adjust as needed */
-      }
+        .thumbnail.active img {
+          border-color: black; /* Change border color for active thumbnail */
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Increase shadow for active thumbnail */
+        }
     
-      .slide-badge {
-        display: inline-block;
-        height: 13px;
-        width: 13px;
-        margin: 0 5px; /* Adjust spacing */
-        cursor: pointer;
-        background-color: transparent;
-        border: 1px solid white; /* Add border for visibility */
-        border-radius: 50%; /* Make it circular */
-      }
+        .slidingSlides {
+          display: none; /* Hide all slides by default */
+          width: 100%;
+          height: auto;
+        }
     
-      .slide-badge.active {
-        background-color: white;
-      }
-    </style>
+        .slidingSlides.active {
+          display: block; /* Show active slide */
+        }
     
-    <div class="sliding-container" style="max-width: 100vw;">
-      <img class="slidingSlides" src="./readme-images/banner4.png">
-      <img class="slidingSlides" src="./readme-images/banner3.png">
-      <img class="slidingSlides" src="./readme-images/banner2.png">
-      <img class="slidingSlides" src="./readme-images/banner1.png">
-    
-      <div class="sliding-center sliding-large sliding-text-white">
-        <div class="slide-left slide-hover-text-khaki" onclick="plusSlides(-1)">&#10094;</div>
-        <div class="slide-right slide-hover-text-khaki" onclick="plusSlides(1)">&#10095;</div>
-        <span class="slide-badge" onclick="currentSlide(1)"></span>
-        <span class="slide-badge" onclick="currentSlide(2)"></span>
-        <span class="slide-badge" onclick="currentSlide(3)"></span>
-        <span class="slide-badge" onclick="currentSlide(4)"></span>
+      </style>
+   
+    <div class="thumbcontainer">
+      <div class="sliding-container">
+        <img class="slidingSlides active" src="./readme-images/banner4.png">
+        <img class="slidingSlides" src="./readme-images/banner3.png">
+        <img class="slidingSlides" src="./readme-images/banner2.png">
+        <img class="slidingSlides" src="./readme-images/banner1.png">
       </div>
+      <div class="sliding-thumbnails"></div>
     </div>
     
     <script>
@@ -295,7 +321,17 @@
       function showSlides(n) {
         var i;
         var slides = document.getElementsByClassName("slidingSlides");
-        var dots = document.getElementsByClassName("slide-badge");
+        var thumbnails = document.querySelector(".sliding-thumbnails");
+        thumbnails.innerHTML = ""; // Clear existing thumbnails
+    
+        // Generate thumbnails for each slide
+        for (i = 0; i < slides.length; i++) {
+          var thumbnail = document.createElement("div");
+          thumbnail.classList.add("thumbnail");
+          thumbnail.innerHTML = `<img src="${slides[i].src}" onclick="currentSlide(${i + 1})">`;
+          thumbnails.appendChild(thumbnail);
+        }
+    
         if (n > slides.length) {
           slideIndex = 1;
         }
@@ -303,28 +339,50 @@
           slideIndex = slides.length;
         }
         for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
+          slides[i].classList.remove("active"); // Hide all slides
         }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].classList.remove("active");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].classList.add("active");
+        slides[slideIndex - 1].classList.add("active"); // Show active slide
+    
+        // Mark active thumbnail
+        var thumbnailsArray = Array.from(document.querySelectorAll(".thumbnail"));
+        thumbnailsArray.forEach((thumbnail, index) => {
+          if (index === slideIndex - 1) {
+            thumbnail.classList.add("active");
+          } else {
+            thumbnail.classList.remove("active");
+          }
+        });
       }
     
       // Auto play the slideshow
       var slideInterval = setInterval(function () {
         plusSlides(1);
-      }, 7000); // Change 2000 to the desired interval in milliseconds (e.g., 3000 for 3 seconds)
+      }, 15000); // Change 5000 to the desired interval in milliseconds (e.g., 3000 for 3 seconds)
     </script>
+  
     
+<style>
+  .custom-hr {
+      border: 3px solid white; /* Adjust thickness as needed */
+      width: 120px;
+      margin: 20px 0;
+  }
+
+  @media screen and (max-width: 700px) {
+      .custom-hr {
+          display: auto;
+          /* Define styles for smaller screens if needed */
+      }
+  }
+</style>
+
+<hr class="custom-hr">
+
+<br><br>
 
 <!-- anouncement -->
 <style>
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-}
+
 
 .announcement-bar {
   background-color: #000000;
@@ -359,7 +417,7 @@ body {
   }
 }
 </style>
-    
+
 <div class="announcement-bar">
   <div class="slider">
       <div class="slide"><a href="/Login" target="_blank"> 📢Free demo workshop on Saturday! Ragister now.📌</a></div>
@@ -368,48 +426,71 @@ body {
   </div>
 </div>
 
+  <style>
+    /* Add CSS styling here */
+    #date-time {
+      font-size: 24px;
+      color: #333;
+    }
+    #course-info {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ffffff;
+      background-color: #020c9cbb;
+    }
 
-  <div class="container">
+    .Floatingcontainer {
+      position: relative;
+      width: 100%;
+      height:  100px; /* Adjust container height as needed */
+    }
 
-    <nav class="navbar" data-navbar>
+    /* Floating Animation */
+    .floatingAnimation {
+      margin-left: 40%;;
+      position: absolute;
+      bottom: 0; /* Adjust the position of the floating element relative to the container */
+      left: 30%; /* Position floating element horizontally in the center of the container */
+      transform: translateX(-50%);
+      animation: floatAnimation 3s ease-in-out infinite alternate; /* Adjust animation properties */
+    }
 
-      
-      </div>
+    @keyframes floatAnimation {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-20px); /* Adjust floating distance */
+      }
+    }
+  </style>
 
-      <ul class="navbar-list">
+<div class="Floatingcontainer">
+  <div id="date-time"></div>
+  <div class="floatingAnimation">
+    <!-- Floating animation element -->
+    <img src="./readme-images/demopng.png" width="60%" alt="Floating Animation">
+  </div>
+  <div id="course-info">Course bookings are open!</div>
+</div>
 
-        <a href="/Login" target="_blank" class="btn">Book Your Class</a>
-    
-        <li class="dropdown"><a href="./aboutus.html" target="_blank" class="dropbtn">About</a></li>
-    
-        <li class="dropdown"><a href="./message.html" target="_blank" class="dropbtn">messageUs</a></li>
-    
-        <li class="dropdown"><a href="./gallery.html" target="_blank" class="dropbtn">Gallery</a></li>
-    
-        <li class="dropdown">
-            <a class="dropbtn">Programs</a>
-            <div class="dropdown-content">
-                
-                
-                <a href="./schedule.html" target="_blank">Live Learning Programs</a>
-                <a href="./course.html" target="_blank">Certification Courses</a>
-            </div>
-        </li>
-    
-        <li class="dropdown"><a href="./vedicmaths.html" target="_blank" class="dropbtn">Textbooks</a>
-    
-        <li class="dropdown"><a href="./Journals.html" target="_blank" class="dropbtn">Journal</a></li>
-    
-        <!-- Add other menu items here -->
-    
-    </ul>
-    
-    
-    </nav>      
-    
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const date = now.toDateString();
+    const time = now.toLocaleTimeString();
+    const dateTimeString = `${date} - ${time}`;
+    document.getElementById('date-time').innerText = dateTimeString;
+  }
 
-    
-    
+  // Update date and time every second
+  setInterval(updateDateTime, 1000);
+</script>
+
+
+    <br>
+
+     
       <!-- 
         - #HEADER
       -->
@@ -460,16 +541,241 @@ body {
                 </div>
     
                 <img src="./assets/images/hero-shape-2.png" width="622" height="551" alt="" class="shape hero-shape-2">
-                <img src="./assets/images/phone.png" width="500" height="900" alt="" class="shape hero-shape-1">
+                <img src="./assets/images/number.png" width="450" height="600" style="z-index: 111;" alt="" class="shape hero-shape-1">
     
               </figure>
     
             </div>
           </section>
+
+               
+  <!-- what we are -->
+
+  <style>
+    /* CSS styles */
+    .unique-vedic-maths-section {
+        background-color: #f8f8f8;
+        padding: 50px 0;
+        position: relative; /* Added relative positioning */
+    }
+
+    .unique-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .unique-content {
+        width: calc(45% - 20px); /* Adjusted width to allow space for images */
+    }
+
+    .unique-text {
+        margin-top: 0px;
+        margin-left: 50px;
+    }
+
+    .unique-text h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .unique-text ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: left;
+    }
+
+    .unique-text ul li {
+        margin-bottom: 10px;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    .unique-text ul li:before {
+        content: "•"; /* Add bullet points */
+        margin-right: 5px;
+        color: #FF00FF; /* Magenta color */
+    }
+
+    .unique-text p {
+        font-size: 16px;
+        color: #666;
+        text-align: left;
+    }
+
+    .unique-additional-info {
+        width: calc(40% - 20px); /* Adjusted width to allow space for images */
+        margin-bottom: 0;
+        margin-top: 10%;
+        text-align: left;
+    }
+
+    .unique-additional-info h2 {
+        font-size: 28px;
+        color: #333;
+        text-align: center;
+    }
+
+    .unique-additional-info ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .unique-additional-info ul li {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .unique-additional-info ul li:before {
+        content: "•"; /* Add bullet points */
+        margin-right: 5px;
+        color: #FF00FF; /* Magenta color */
+    }
+
+    .unique-additional-info p {
+        font-size: 16px;
+        color: #666;
+    }
+
+    /* Highlight specific words */
+    .highlight {
+        color: #FF00FF; /* Magenta color */
+        font-weight: bold;
+    }
+
+    .unique-image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .unique-image-container img {
+        max-width: 45%;
+        border-radius: 15px; /* Adjust the value to change the roundness of the corners */
+    }
+
+    .unique-image-container img:nth-child(1) {
+        position: absolute; /* Set position to absolute */
+        top: 10px; /* Align to top */
+        right: 30px; /* Align to right */
+    }
+
+    .unique-image-container img:nth-child(2) {
+        position: absolute; /* Set position to absolute */
+        bottom: 10px; /* Align to bottom */
+        left: 30px; /* Align to left */
+    }
+
+    /* Adjust positioning for text */
+    .unique-additional-info {
+        margin-left: 65%; /* Adjusted to position to the right of the image */
+        margin-top: 42%;
+    }
+    /* CSS for university logos */
+.university-logos {
+    display: flex; /* Display images in a row */
+    justify-content: center; /* Center-align the images */
+    align-items: center; /* Vertically center-align the images */
+}
+
+.university-logo {
+    width: 150px; /* Set the width of the logo images */
+    height: auto; /* Automatically adjust height while maintaining aspect ratio */
+    margin: 10px; /* Add margin around the images */
+    transition: transform 0.2s; /* Add transition effect for smooth uplift */
+}
+
+.university-logo:hover {
+    transform: scale(1.2); /* Scale up the image slightly when hovered */
+}
+
+      </style>
+       <div class="container">
+ 
+      <h2 class="h2 section-title">
+          <span class="span">NUMERICVEDA </span> Community 
+      </h2>
   
+      <section class="unique-vedic-maths-section">
+          <div class="unique-container">
+              <div class="unique-content">
+                  <div class="unique-text">
+                      <h2>Unlock the potential of Vedic Maths with us:</h2>
+                      <ul>
+                          <li>🎓 Over 210,000 students have mastered Vedic Maths techniques with our guidance!</li>
+                          <li>👩‍🏫 Trained and nurtured a cohort of 20,000 passionate teachers, dedicated to shaping young minds.</li>
+                          <li>🌍 Collaborated with 20 universities and 50 colleges to spread the reach of Vedic Maths education.</li>
+                      </ul>
+                      <div class="unique-image-container">
+                        <img src="./readme-images/vedicpng.png" width="40%" height="30%" alt="Top Right Image">
+                       
+                        <div class="unique-additional-info">
+                          <h2 class="h2 section-title">
+                              Join our Vedic Maths <span class="span"> community  </span> for
+                          </h2>
+                          <ul>
+                              <li>Engage with over 10,000 members in our vibrant student groups for collaborative learning.</li>
+                              <li>Access job placement opportunities in partnerships with 50+ institutes and universities.</li>
+                              <li>Hone your skills by solving 500+ aptitude problems sourced from competitive exams.</li>
+                          </ul>
+                          <p>Take your mathematical journey to new heights with us!</p>
+                      </div>
+                      </div>
+                        
+
+                      <p>
+                          <h2 class="h2 section-title">
+                              <span class="span">Join our community  </span> and explore the wonders of Vedic Maths today!
+                          </h2>
+                      </p>
+                      
+                  </div>
+                  
+              </div>
+              <div>
+                <img src="./readme-images/digitalvedic.png" width="60%" alt="Bottom Left Image">
+            </div>
+             
+              
+          </div>
+        
+      </section>
   
-    
-          <!-- 
+      <!-- Affiliation Section -->
+      <section class="affiliation-section">
+          <div class="affiliation-container">
+              <h2 class="h2 section-title">
+                  Join Our <span class="span">  Affiliation Program!</span> 
+              </h2>
+              <p class="affiliation-info">We are proud to offer an affiliation program with the following universities. Upon completion of our courses, you will receive certification from one of these esteemed institutions:</p>
+              <div class="university-logos">
+                  <img class="university-logo" src="./assets/images/chaudhary_bansi_lal_university.jpeg" alt="Chaudhary Bansi Lal University, Bhiwani">
+                  <img class="university-logo" src="./assets/images/choudhary_charan_singh_university.jpeg" alt="Choudhary Charan Singh University, Meerut">
+                  <img class="university-logo" src="./assets/images/indira_gandhi_university.jpeg" alt="Indira Gandhi University, Rewari">
+                  <img class="university-logo" src="./assets/images/central_university_punjab.jpeg" alt="Central University, Punjab">
+              </div>
+              <p class="affiliation-info">Join our program today and enhance your skills with the recognition of these prestigious universities!</p>
+          </div>
+      </section>
+  
+      <script>
+          // Your JavaScript code here, if any
+      </script>
+  
+</div>
+
+        <!-- 
             - #CATEGORY
           -->
     
@@ -493,11 +799,11 @@ body {
     
                     <div class="card-icon">
                       <img src="./assets/images/category-1.svg" width="40" height="40" loading="lazy"
-                        alt="Online certification Programs" class="img">
+                        alt="Online certification Courses" class="img">
                     </div>
     
                     <h3 class="h3">
-                      <a href="#" class="card-title">Online certification Programs</a>
+                      <a href="#" class="card-title">Online certification Courses</a>
                     </h3>
     
                     <p class="card-text">
@@ -558,11 +864,6 @@ body {
                       <img src="./assets/images/category-4.svg" width="40" height="40" loading="lazy"
                         alt="Crack Govt Exams with Ease: Vedic Math Mastery Course!" class="img">
                     </div>
-    
-
-
-
-
 
                     <h3 class="h3">
                       <a href="#" class="card-title">Crack Govt Exams with Ease: Vedic Math Mastery Course!</a>
@@ -580,210 +881,601 @@ body {
               </ul>
     
             </div>
-          </section>
+             <!-- ourcourseprograms -->
+      <style>
+   
+        .unique-ourcoursecontainer {
+          font-family: Arial, sans-serif;
+          background-color: #1e1e1e; /* Dark background color */
+          color: #fff; /* White text color */
+          margin: 0;
+          padding: 0;
+          height: 25vh; /* Full viewport height */
+          position: relative; /* Ensure relative positioning */
+        }
+      
+        .unique-curtain {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to bottom, #4979fd 50%, #003cff 50%);
+          z-index: 13;
+          animation: openCurtain 1s ease forwards;
+        }
+     
+              
+              .unique-courses-section {
+                display: none;
+                position: relative;
+              }
+              
+              .unique-courses-section.active {
+                display: block;
+                animation: fadeIn 0.5s ease forwards;
+              }
+              
+              @keyframes fadeIn {
+                from {
+                  opacity: 0;
+                  transform: translateY(-50px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+              
+              .unique-courses-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 150px;
+                position: relative;
+                background-color: #000000cc ;
+                
+               
+              }
+              
+              .unique-course-box {
+                width: 30%; /* Adjusted based on container */
+                background-color: #007bff; /* Blue box color */
+                margin: 1%; /* Adjusted based on container */
+                padding: 2%; /* Adjusted based on container */
+                border-radius: 5px;
+                animation: explode 1s ease forwards;
+              }
+              
+              @keyframes explode {
+                0% {
+                  opacity: 0;
+                  transform: scale(0);
+                }
+                50% {
+                  opacity: 1;
+                  transform: scale(1.2);
+                }
+                100% {
+                  opacity: 1;
+                  transform: scale(1);
+                }
+              }
+              
+              .unique-course-box h3 {
+                margin-top: 0;
+              }
+              
+              .unique-course-box a {
+                text-decoration: none;
+                color: #fff; /* White text color for links */
+              }
+              
+              .unique-our-courses-button {
+                font-size: 2.5vh; /* Adjusted based on container */
+                padding: 2vh 4vh; /* Adjusted based on container */
+                background: linear-gradient(to right, #007bff 50%, #ffffff 50%);
+                background-size: 200% 100%;
+                background-position: right bottom;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                transition: all 0.4s ease-out;
+                z-index: 2;
+                position: relative;
+              }
+              
+              .unique-our-courses-button:hover {
+                background-position: left bottom;
+                color: #ffffff;
+              }
+              
+        
     
+    @keyframes openCurtain {
+      from {
+        height: 0;
+      }
+      to {
+        height: 100%;
+      }
+    }
+    
+              .unique-our-courses-text {
+                font-size: 4vh; /* Adjusted based on container */
+                font-weight: bold;
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                color: #ffffff;
+          
+              
+              }
+              
+              @media screen and (max-width: 768px) {
+                .unique-course-box {
+                  width: 90%;
+                }
+              }
+              
+              </style>
+              <div class="unique-ourcoursecontainer">
+              
+                   <button class="unique-our-courses-button">Our Courses</button>
+                  <div class="unique-curtain">
+                    <div class="unique-our-courses-text">
+                       <h2 class="h2 section-title">
+                        Our Vedic Mathematics Courses <span class="span">click here  </span>
+                    </h2>
+                  </div>
+                  <div class="unique-courses-section" style="display: none;"> <!-- initially hidden -->
+                 
+                    <div class="unique-courses-container">
+                    
+                      <div class="unique-course-box">
+                        
+                        <a href="./schedule.html#live-free-workshops"><h3>Live Free Workshops</h3></a>
+                        <p> <h2 class="h2 section-title">
+                          Price: <span class="span"> Rs. 0  </span> for you
+                      </h2></p>
+                    </div>
+                    <div class="unique-course-box">
+                        <a href="./schedule.html#online-certification-programs"><h3>Online Certification Programs (4 weeks program)</h3></a>
+                        <p> <h2 class="h2 section-title">
+                          Price: <span class="span"> Rs. 1499 </span> for you
+                      </h2></p>
+                    </div>
+
+                    <div class="unique-course-box">
+                        <a href="./schedule.html#student-learning"><h3>Student Learning - Basic to Advance</h3></a>
+                        <p> <h2 class="h2 section-title">
+                          Price: <span class="span"> Rs. 2499  </span> for you
+                      </h2></p>
+                    </div>
+                    <div class="unique-course-box">
+                        <a href="./schedule.html#ultra-advanced-vedic-maths"><h3>Ultra Advanced Vedic Maths Techniques</h3></a>
+                        <p> <h2 class="h2 section-title">
+                          Price: <span class="span"> Rs. 5499  </span> for you
+                      </h2></p>
+                    </div>
+                    <div class="unique-course-box">
+                        <a href="./schedule.html#crack-govt-exams"><h3>Crack Govt Exams with Ease: Vedic Math Mastery Course!</h3></a>
+                        <p> <h2 class="h2 section-title">
+                          Price: <span class="span"> Rs. 4499  </span> for you
+                      </h2></p>
+                    </div>
+                    <div class="unique-course-box">
+                        <a href="./schedule.html#teacher-training"><h3>Teacher Training & Certification</h3></a>
+                        <p> <h2 class="h2 section-title">
+                          Price: <span class="span"> Rs. 9499 </span> for you
+                      </h2></p>
+                    </div>
+                    <div class="unique-course-box">
+                        <a href="./schedule.html#mind-training"><h3>Mind Training for Fast Thinking</h3></a>
+                        <p> <h2 class="h2 section-title">
+                          Price: <span class="span"> Rs. 2999  </span> for you
+                      </h2></p>
+                    </div>
+                    <div class="unique-course-box">
+                        <a href="./schedule.html#enhance-focus"><h3>Enhance focus using our worksheets with detailed analysis.</h3></a>
+                        <p> <h2 class="h2 section-title">
+                          Price: <span class="span"> Rs. 1999  </span> for you 
+                      </h2></p>
+                    </div>
+                    
+                      <!-- Add more course boxes as needed -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                  const coursesButton = document.querySelector('.unique-our-courses-button');
+                  const coursesText = document.querySelector('.unique-our-courses-text');
+                  const coursesSection = document.querySelector('.unique-courses-section');
+              
+                  function toggleCourses() {
+                    coursesSection.style.display = coursesSection.style.display === 'none' ? 'block' : 'none';
+                  }
+              
+                  coursesButton.addEventListener('click', toggleCourses);
+                  coursesText.addEventListener('click', toggleCourses);
+                });
+              </script>
+       
+    
+          </section>
+
+          <!-- review-container -->
+    
+            <!-- <style>
+              .reviews-container {
+                width: 100%;
+              }
+              
+              .review-box {
+                display: inline-block;
+                width: 45%; /* Adjust the width of each box as needed */
+                margin: 10px;
+                vertical-align: top;
+              }
+              
+              .review {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #f8f8f8;
+                margin-bottom: 10px;
+                font-size: 14px;
+              }
+              
+              .rating {
+                text-align:justify;
+              }
+              
+           .stars {
+                color: gold;
+                  }
+            </style>
+        
+            <div class="reviews-container">
+              <div class="review-box">
+                <div class="review">Live Free Workshops - "I attended the live free workshops and they were incredibly informative. I learned so much in just a short amount of time. Highly recommend!" - Sarah</div>
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <div class="review-box">
+                <div class="review">Online Certification Programs (4 weeks program) - "The online certification program was well-structured and easy to follow. The instructors were knowledgeable and supportive throughout the entire program." - John</div>
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+                <div class="review-box">
+                  <div class="review">Live Free Workshops - "I attended the live free workshops and they were incredibly informative. I learned so much in just a short amount of time. Highly recommend!" - Sarah</div>
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
+                <div class="review-box">
+                  <div class="review">Online Certification Programs (4 weeks program) - "The online certification program was well-structured and easy to follow. The instructors were knowledgeable and supportive throughout the entire program." - John</div>
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
+                <div class="review-box">
+                  <div class="review">Student Learning - Basic to Advance - "The student learning program offered a comprehensive curriculum that took me from basic to advanced concepts seamlessly. I feel much more confident in my skills now!" - Emily</div>
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
+                <div class="review-box">
+                  <div class="review">Ultra Advanced Vedic Maths Techniques - "The ultra advanced Vedic maths techniques course exceeded my expectations. The techniques taught are mind-blowing and have significantly improved my calculation speed." - David</div>
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
+                <div class="review-box">
+                  <div class="review">Crack Govt Exams with Ease: Vedic Math Mastery Course! - "As someone preparing for government exams, this course was a game-changer. The Vedic math mastery techniques helped me solve complex problems with ease. Highly recommended for exam preparation!" - Priya</div>
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
+                <div class="review-box">
+                  <div class="review">Teacher Training & Certification - "The teacher training and certification program provided me with valuable insights and practical skills that I can apply in the classroom. The instructors were supportive and knowledgeable. I feel more confident as an educator now." - Michael</div>
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
+                <div class="review-box">
+                  <div class="review">Mind Training for Fast Thinking - "The mind training course helped me improve my cognitive abilities and enhance my thinking speed. The exercises were challenging yet rewarding, and I can already see a difference in my mental agility." - Sophia</div>
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
+                <div class="review-box">
+                  <div class="review">Enhance focus using our worksheets with detailed analysis - "The focus enhancement worksheets provided detailed analysis and actionable strategies to improve concentration. I found the exercises engaging and effective in boosting my productivity." - Alex</div>
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+        
+           -->
+     
     <!-- quiz -->
+    <section>
     <div class="quizbody">
-      <h2>Let us help you to select the perfect course for you</h2>
-      <h1>Total 10 quetions, each has 30 sec. Time Duration.</h1>
+      <h2> Refresh this page to attend the quiz</h2>
+      <h2 class="h2 section-title">
+        Let us help you to select the <span class="span"> perfect course  </span> for you
+    </h2>
+      <h1>Total 11 questions, each has 30 sec. Time Duration.</h1>
+
       <div id="quiz-container">
+        
           <div id="timer">Time Left: <span id="time">30</span> seconds</div>
           <div id="question-container" class="question"></div>
           <div id="options-container" class="options"></div>
           <button id="submit-btn" onclick="submitQuiz()" style="display: none;">Submit</button>
           <button id="next-btn" onclick="nextQuestion()" style="display: none;">Next Question</button>
       </div>
-  
+     
       <div id="result-container" style="display: none;">
           <h2>Quiz Result</h2>
           <p id="result"></p>
-          <button onclick="navigateToResultPage()">View Detailed Results</button>
+          <div id="correct-answers"></div>
+          <div id="question-solutions"></div>
+
+          <button onclick="navigateToResultPage()">Get Recommendation</button>
       </div>
-  
-      <script>
-          const quizData = [
-              {
-                  question: "What is the result of multiplying 9 by 0?",
-                  options: ["a) 0", "b) 9", "c) 18", "d) 81"],
-                  correctAnswer: 0,
-                  score: 4.545454545454546,
-              },
-              // Add more quiz data here...
-              {
-    question: "What is the product of 11 and 12?",
-    options: ["a) 122", "b) 132", "c) 142", "d) 152"],
-    correctAnswer: 1,
-    score: 4.545454545454546,
-  },
-  {
-    question: "If 35 is divided by 7, what is the quotient?",
-    options: ["a) 4", "b) 5", "c) 6", "d) 7"],
-    correctAnswer: 1,
-    score: 9.090909090909092,
-  },
-  {
-    question: "What is the square of 23?",
-    options: ["a) 413", "b) 483", "c) 529", "d) 576"],
-    correctAnswer: 2,
-    score: 9.090909090909092,
-  },
-  {
-    question: "If a number is increased by 20% and then decreased by 20%, what is the net change?",
-    options: ["a) 0%", "b) 2%", "c) 4%", "d) 8%"],
-    correctAnswer: 0,
-    score: 9.090909090909092,
-  },
-  {
-    question: "Solve: (45 * 45) + (45 * 55)",
-    options: ["a) 4500", "b) 4950", "c) 5000", "d) 5500"],
-    correctAnswer: 3,
-    score: 9.090909090909092,
-  },
-  {
-    question: "In the Bhagavad Gita, Lord Krishna mentions a concept that can be related to finding the least common multiple (LCM) in modern mathematics. What is this concept?",
-    options: ["a) Karma Yoga", "b) Dharma", "c) Yajna", "d) Yuga"],
-    correctAnswer: 3,
-    score: 13.636363636363637,
-  },
-  {
-    question: "The ancient Indian mathematician Brahmagupta introduced a rule that can be related to solving quadratic equations. What is this rule called?",
-    options: ["a) Sutra Siddhanta", "b) Brahmasphutasiddhanta", "c) Bijaganita", "d) Shulba Sutras"],
-    correctAnswer: 2,
-    score: 13.636363636363637,
-  },
-  {
-    question: "The Vedic math technique called 'Nikhilam Navatashcaramam Dashatah' is equivalent to which modern mathematical operation?",
-    options: ["a) Division", "b) Multiplication", "c) Square Root", "d) Addition"],
-    correctAnswer: 1,
-    score: 13.636363636363637,
-  },
-  {
-    question: "In the Rigveda, there is a reference to a numerical pattern similar to the Fibonacci sequence. What is this pattern known as in Vedic math?",
-    options: ["a) Pratyayasankhya", "b) Amshasankhya", "c) Shunyasankhya", "d) Padavinyasa"],
-    correctAnswer: 1,
-    score: 13.636363636363637,
-  },
-              {
-                  question: "whold you like to rate this quiz between  1 and 5?",
-                  options: ["1", "2", "3", "4"  , "5"],
-                  correctAnswer: 3,
-                  score: 0,
-              }
-          ];
-  
-          let currentQuestion = 0;
-          let timeLeft = 30; // Adjusted time for testing
-          let timerInterval;
-          let totalScore = 0;
-          let quizSubmitted = false;
-  
-          function startTimer() {
-              timerInterval = setInterval(function () {
-                  document.getElementById('time').textContent = timeLeft;
-                  timeLeft--;
-  
-                  if (timeLeft < 0) {
-                      clearInterval(timerInterval);
-                      submitQuiz();
-                  }
-              }, 1000);
-          }
-  
-          function displayQuestion() {
-    const questionContainer = document.getElementById('question-container');
-    const optionsContainer = document.getElementById('options-container');
-    const currentQuizData = quizData[currentQuestion];
-
-    questionContainer.textContent = currentQuizData.question;
-    optionsContainer.innerHTML = '';
-
-    currentQuizData.options.forEach((option, index) => {
-        const optionElement = document.createElement('div');
-        optionElement.className = 'option';
-        optionElement.textContent = option;
-        optionElement.setAttribute('data-index', index);
-        optionElement.addEventListener('click', () => selectOption(index));
-        optionsContainer.appendChild(optionElement);
-    });
-
-    document.getElementById('submit-btn').style.display = 'none';
-    document.getElementById('next-btn').style.display = 'none';
-}
-
-              // Function body remains the same
-
-  
-          function selectOption(selectedIndex) {
-    if (!quizSubmitted) {
-        const options = document.querySelectorAll('.option');
-        options.forEach(option => option.classList.remove('selected'));
-        options[selectedIndex].classList.add('selected');
-        document.getElementById('submit-btn').style.display = 'block';
-    }
-}
-
-          
-          
-  
-          function submitQuiz() {
-              clearInterval(timerInterval);
-              quizSubmitted = true;
-  
-              const selectedOptions = document.querySelectorAll('.option.selected');
-              let isCorrect = false;
-  
-              selectedOptions.forEach((selectedOption) => {
-                  const userAnswerIndex = selectedOption.getAttribute('data-index');
-                  isCorrect = userAnswerIndex === quizData[currentQuestion].correctAnswer.toString();
-                  totalScore += isCorrect ? quizData[currentQuestion].score : 0;
-              });
-  
-              // Ensure that if there are no selected options, the score doesn't get incremented
-              if (selectedOptions.length === 0) {
-                  totalScore += 0;
-              }
-  
-              if (currentQuestion === quizData.length - 1) {
-                  // Cap the total score at 100
-                  totalScore = Math.min(totalScore, 100);
-                  document.getElementById('result').textContent = `Your score: ${totalScore.toFixed(2)} / 100`; // Display score out of 100
-                  document.getElementById('result-container').style.display = 'block';
-                  document.getElementById('next-btn').style.display = 'none';
-                  document.getElementById('submit-btn').style.display = 'none';
-              } else {
-                  document.getElementById('next-btn').style.display = 'block';
-                  document.getElementById('submit-btn').style.display = 'none';
-                  quizSubmitted = false;
-              }
-          }
-  
-          function nextQuestion() {
-    if (currentQuestion < quizData.length - 1) {
-        currentQuestion++;
-        timeLeft = 30; // Reset the timer for the next question
-        startTimer(); // Restart the timer for the next question
-        displayQuestion(); // Display the next question
-        document.getElementById('next-btn').style.display = 'none'; // Hide the "Next Question" button
-    } else {
-        // If it's the last question, show the "Submit" button
-        document.getElementById('submit-btn').style.display = 'block';
-        document.getElementById('next-btn').style.display = 'none'; // Hide the "Next Question" button
-    }
-}
-
-          
-  
-          function navigateToResultPage() {
-              // Pass the total score to the result page as a parameter
-              window.location.href = `./result.html?score=${totalScore.toFixed(2)}`;
-              alert('Remember your score');
-          }
-  
-          startTimer();
-          displayQuestion();
-      </script>
   </div>
-  
+  <script>
+   const quizData = [
+            {
+                "question": "The product of 98 x97 is",
+                "options": ["A 9506", "B 9516", "C 9416", "D 9416"],
+                "correctAnswer": 2,
+                "score": 10
+            },
+            {
+                "question": "The right part in the product of 1021 x 1020 is",
+                "options": ["A 1041", "B 420", "C 2120", "D None"],
+                "correctAnswer": 1,
+                "score": 10
+            },
+            {
+                "question": "Solution of 995 x 995 is",
+                "options": ["A 990005", "B 900025", "C 990025", "D 99025"],
+                "correctAnswer": 2,
+                "score": 10
+            },
+            {
+                "question": "Solution of 1015 x 1002",
+                "options": ["A 101730", "B 1017030", "C 1017003", "D 1170030"],
+                "correctAnswer": 1,
+                "score": 10
+            },
+            {
+                "question": "The solution of 9989 x 9990 is",
+                "options": ["A 99791100", "B 99790110", "C 99791100", "D 99891110"],
+                "correctAnswer": 0,
+                "score": 10
+            },
+            {
+                "question": "The solution of square of 9985 is",
+                "options": ["A 9970225", "B 99700225", "C 99600225", "D 99650225"],
+                "correctAnswer": 1,
+                "score": 10
+            },
+            {
+                "question": "The product of 105 x 106 + 104 x 103 is",
+                "options": ["A 21832", "B 21842", "C 21742", "D 21442"],
+                "correctAnswer": 1,
+                "score": 10
+            },
+            {
+                "question": "The product of 106 x 107 + 109 x 104 is",
+                "options": ["A 22678", "B 22578", "C 22668", "D 22568"],
+                "correctAnswer": 0,
+                "score": 10
+            },
+            {
+                "question": "The left part in the product of 9990 x 9995 + 9998 x 9980 is",
+                "options": ["A 1996390", "B 19963090", "C 19962090", "D 199630090"],
+                "correctAnswer": 1,
+                "score": 10
+            },
+            {
+                "question": "The solution of 1020 x 1005 is",
+                "options": ["A 1020100", "B 1025100", "C 1025010", "D 1105010"],
+                "correctAnswer": 2,
+                "score": 10
+            },
+            {
+                "question": "The solution of 9975 x 9970 is",
+                "options": ["A 9975900", "B 9975090", "C 99450750", "D 9945750"],
+                "correctAnswer": 0,
+                "score": 10
+            }
+          
+          ];
+          let currentQuestion = 0;
+    let timeLeft = 30; // Adjusted time for testing
+    let timerInterval; // Define the timerInterval variable
+    let totalScore = 0;
+    let quizSubmitted = false;
+
+    function startTimer() {
+        timerInterval = setInterval(function () {
+            document.getElementById('time').textContent = 'Time: ' + timeLeft;
+            timeLeft--; // Decrement timeLeft inside the interval function
+
+            if (timeLeft < 0) {
+                clearInterval(timerInterval);
+                submitQuiz();
+            }
+        }, 1000);
+    }
+
+    function startQuiz() {
+        // Start the timer only when the "start" button is clicked
+        startTimer();
+        // Additional code to start your quiz here
+        console.log("Quiz started!");
+    }
+
+
+
+function displayQuestion() {
+   const questionContainer = document.getElementById('question-container');
+   const optionsContainer = document.getElementById('options-container');
+   const currentQuizData = quizData[currentQuestion];
+
+   questionContainer.textContent = currentQuizData.question;
+   optionsContainer.innerHTML = '';
+
+   currentQuizData.options.forEach((option, index) => {
+       const optionElement = document.createElement('div');
+       optionElement.className = 'option';
+       optionElement.textContent = option;
+       optionElement.setAttribute('data-index', index);
+       optionElement.addEventListener('click', () => selectOption(index));
+       optionsContainer.appendChild(optionElement);
+   });
+
+   // Hide both buttons initially
+   document.getElementById('next-btn').style.display = 'none';
+   document.getElementById('submit-btn').style.display = 'none';
+
+   // Show next button if it's not the last question
+   if (currentQuestion < quizData.length - 1) {
+       document.getElementById('next-btn').style.display = 'block';
+   } else {
+       // Show submit button if it's the last question
+       document.getElementById('submit-btn').style.display = 'block';
+   }
+}
+
+function selectOption(selectedIndex) {
+   if (!quizSubmitted) {
+       const options = document.querySelectorAll('.option');
+       options.forEach(option => option.classList.remove('selected'));
+       options[selectedIndex].classList.add('selected');
+
+       // Update the selected option
+       quizData[currentQuestion].selectedOption = selectedIndex;
+
+       // Hide submit button if it's not the last question
+       if (currentQuestion < quizData.length - 1) {
+           document.getElementById('submit-btn').style.display = 'none';
+       }
+   }
+}
+
+function submitQuiz() {
+   clearInterval(timerInterval);
+   quizSubmitted = true;
+
+   // Reset total score before calculating the score
+   totalScore = 0;
+
+   // Calculate score based on the selected option in quizData
+   quizData.forEach(question => {
+       const userAnswerIndex = question.selectedOption;
+       if (userAnswerIndex !== undefined && userAnswerIndex !== null) {
+           const isCorrect = userAnswerIndex === question.correctAnswer;
+           totalScore += isCorrect ? question.score : 0;
+       }
+   });
+
+   // Store question solutions in local storage
+   const questionSolutions = quizData.map(question => {
+       return {
+           correctAnswer: question.options[question.correctAnswer],
+           userAnswer: question.selectedOption !== undefined ? question.options[question.selectedOption] : "Not answered"
+       };
+   });
+   localStorage.setItem('questionSolutions', JSON.stringify(questionSolutions));
+
+   // Open quiz result on a new page
+   const form = document.createElement('form');
+   form.method = 'get';
+   form.action = './quiz-result-page.html';
+   form.target = '_blank';
+   const scoreInput = document.createElement('input');
+   scoreInput.type = 'hidden';
+   scoreInput.name = 'score';
+   scoreInput.value = totalScore.toFixed(2);
+   form.appendChild(scoreInput);
+   document.body.appendChild(form);
+   form.submit();
+}
+function nextQuestion() {
+   if (currentQuestion < quizData.length - 1) {
+       currentQuestion++;
+       timeLeft = 30; // Reset the timer to 30 seconds for the next question
+       clearInterval(timerInterval); // Clear the existing timer interval
+       startTimer(); // Restart the timer for the next question
+       displayQuestion(); // Display the next question
+   } else {
+       // If it's the last question, hide next button and show submit button
+       document.getElementById('next-btn').style.display = 'none';
+       document.getElementById('submit-btn').style.display = 'block';
+   }
+}
+
+
+startTimer();
+displayQuestion();
+ </script>
+ </section>
   <br>
   <br>
   <br>
@@ -914,7 +1606,7 @@ body {
     
                       </div>
     
-                      <data class="price" value="399">Rs. 399.00</data>
+                      <data class="price" value="399">Free Demo</data>
     
                       <ul class="card-meta-list">
     
@@ -973,7 +1665,7 @@ body {
     
                       </div>
     
-                      <data class="price" value="699">Rs. 699.00</data>
+                      <data class="price" value="699">Free Demo</data>
     
                       <ul class="card-meta-list">
     
@@ -1032,7 +1724,7 @@ body {
     
                       </div>
     
-                      <data class="price" value="499">Rs. 499.00</data>
+                      <data class="price" value="499">Free Demo</data>
     
                       <ul class="card-meta-list">
     
@@ -1154,11 +1846,424 @@ body {
     
             </div>
           </section>
+
+         <!-- photo Gallery -->
+
+         <h2 class="h2 section-title">
+          <span class="span"> Social </span> updates
+        </h2>
+        
+         <div class="social-media-container">
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Embedded Social Media Content</title>
+          <!-- Include necessary dependencies -->
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <!-- Link to your custom stylesheet -->
+          <style>
+              .social-media-body {
+                  font-family: Arial, sans-serif;
+                  background-color: #f0f0f0;
+                  color: #333;
+                  margin: 0;
+                  padding: 0;
+              }
+      
+              .social-media-container {
+                  display: flex;
+                  justify-content: space-around;
+                  align-items: flex-start;
+                  padding: 20px;
+                  max-width: 1200px;
+                  margin: 0 auto;
+              }
+
+
+      
+              .twitter-container,
+              .facebook-container {
+                  background-color: #fff;
+                  border-radius: 10px;
+                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                  overflow: hidden;
+              }
+      
+              .twitter-container {
+                  flex: 1;
+                  margin-right: 20px;
+                  max-height: 800px; /* Set a maximum height */
+    overflow-y: auto; /* Allow vertical scrolling */
+              }
+      
+              .facebook-container {
+                  flex: 1;
+                  margin-left: 20px;
+              }
+      
+              .twitter-heading,
+              .twitter-content a,
+              .twitter-content iframe {
+                  color: #000;
+              }
+      
+              .twitter-heading {
+                  background-color: #000000;
+                  color: #fff;
+              }
+      
+              .facebook-heading,
+              .facebook-content iframe {
+                  background-color: #1877f2;
+                  color: white;
+              }
+      
+              .social-heading {
+                  font-size: 24px;
+                  font-weight: bold;
+                  padding: 15px;
+                  margin: 0;
+              }
+      
+              .twitter-content,
+              .facebook-content {
+                  padding: 20px;
+              }
+      
+              .follow-button,
+              .share-button {
+                  display: inline-block;
+                  background-color: #1da1f2;
+                  color: #fff;
+                  padding: 10px 20px;
+                  border: none;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  text-decoration: none;
+                  margin-right: 10px;
+                  transition: background-color 0.3s;
+              }
+      
+              .follow-button:hover,
+              .share-button:hover {
+                  background-color: #0d8bf0;
+              }
+          </style>
+      
+          <div class="social-media-container">
+              <!-- Twitter Content -->
+              
+              <div class="twitter-container">
+                <div>
+                  <h2 class="social-heading twitter-heading">X Social Media Handler</h2>
+                  <div class="twitter-content">
+                      <a class="twitter-timeline" href="https://twitter.com/RakeshB59785148?t=nUjc0Ob84nGTFFEUnPZG-w&s=09" data-theme="light">Tweets by Dr. Rakesh Bhatia</a>
+                      
+                  </div>
+                 
+                    <a class="follow-button" href="https://twitter.com/RakeshB59785148" data-size="large">Follow on X</a>
+                    <a class="share-button" href="https://twitter.com/intent/tweet" data-size="large">Tweet</a>
+                </div>
+              </div>
+        
+              <!-- Facebook Content -->
+              <div class="facebook-container">
+                  <h2 class="social-heading facebook-heading">Facebook</h2>
+                  <div class="facebook-content">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FVedicmathsrakeshbhatia%2F&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    <div>
+                        <a class="follow-button" href="https://www.facebook.com/Vedicmathsrakeshbhatia/">Follow on Facebook</a>
+                        <a class="share-button" href="#">Share on Facebook</a>
+                    </div>
+                </div>
+                
+              </div>
+          </div>
+      </div>
+<br><br><br><br>
+      <!-- photo gallery -->
+      <style>
+        .custom-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
     
+        .custom-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 10px;
+            justify-items: center;
+            align-items: center;
+        }
     
+        .custom-image {
+            position: relative;
+            overflow: hidden;
+        }
     
+        .custom-image img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
     
+        .custom-image:hover img {
+            transform: scale(1.1);
+        }
     
+        .custom-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(3, 0, 10, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            overflow: hidden;
+        }
+    
+        .custom-close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    
+        .custom-overlay-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+    
+        .custom-overlay-image {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    
+        .custom-overlay-text {
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.829);
+            padding: 10px 0;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+    
+        .custom-image:hover .custom-overlay-text {
+            opacity: 1;
+        }
+    
+        .custom-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    
+        .custom-prev {
+            left: 10px;
+        }
+    
+        .custom-next {
+            right: 10px;
+        }
+    </style>
+<h2 class="h2 section-title">
+   <span class="span">Dr. Rakesh Bhatia </span> Photo Gallery
+</h2>   
+      <div class="custom-container">
+        <div class="custom-gallery">
+            <div class="custom-image">
+                <img src="./assets/images/award_3.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+                <div class="custom-overlay-text">
+                    <h2>Event 1</h2>
+                    <p>Subtitle 1</p>
+                </div>
+            </div>
+            <div class="custom-image">
+              <img src="./assets/images/award_3.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+              <div class="custom-overlay-text">
+                  <h2>Event 1</h2>
+                  <p>Subtitle 1</p>
+              </div>
+          </div>
+          <div class="custom-image">
+            <img src="./assets/images/award_3.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+            <div class="custom-overlay-text">
+                <h2>Event 1</h2>
+                <p>Subtitle 1</p>
+            </div>
+        </div>
+        <div class="custom-image">
+          <img src="./assets/images/award_3.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+          <div class="custom-overlay-text">
+              <h2>Event 1</h2>
+              <p>Subtitle 1</p>
+          </div>
+      </div>
+      <div class="custom-image">
+        <img src="./assets/images/award_3.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+        <div class="custom-overlay-text">
+            <h2>Event 1</h2>
+            <p>Subtitle 1</p>
+        </div>
+    </div>
+    <div class="custom-image">
+      <img src="./assets/images/award_3.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+      <div class="custom-overlay-text">
+          <h2>Event 1</h2>
+          <p>Subtitle 1</p>
+      </div>
+  </div>
+  <div class="custom-image">
+    <img src="./assets/images/award_3.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+    <div class="custom-overlay-text">
+        <h2>Event 1</h2>
+        <p>Subtitle 1</p>
+    </div>
+</div>
+<div class="custom-image">
+  <img src="./assets/images/award_3.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+  <div class="custom-overlay-text">
+      <h2>Event 1</h2>
+      <p>Subtitle 1</p>
+  </div>
+</div>
+<div class="custom-image">
+  <img src="./assets/images/award_3.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+  <div class="custom-overlay-text">
+      <h2>Event 1</h2>
+      <p>Subtitle 1</p>
+  </div>
+</div>
+<div class="custom-image">
+  <img src="./assets/images/award_3.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+  <div class="custom-overlay-text">
+      <h2>Event 1</h2>
+      <p>Subtitle 1</p>
+  </div>
+</div>
+<div class="custom-image">
+  <img src="./assets/images/award_3.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+  <div class="custom-overlay-text">
+      <h2>Event 1</h2>
+      <p>Subtitle 1</p>
+  </div>
+</div>
+<div class="custom-image">
+  <img src="./assets/images/award_2.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+  <div class="custom-overlay-text">
+      <h2>Event 1</h2>
+      <p>Subtitle 1</p>
+  </div>
+</div>
+<div class="custom-image">
+  <img src="./assets/images/award_1.jpg" alt="Image 1" data-custom-title="Event 1" data-custom-subtitle="Subtitle 1">
+  <div class="custom-overlay-text">
+      <h2>Event 1</h2>
+      <p>Subtitle 1</p>
+  </div>
+</div>
+            <!-- Add more image divs as needed -->
+        </div>
+    
+        <div class="custom-overlay">
+            <span class="custom-close-btn">&times;</span>
+            <div class="custom-overlay-content">
+                <img class="custom-overlay-image" src="" alt="">
+                <div class="custom-overlay-text"></div>
+            </div>
+            <span class="custom-arrow custom-prev" onclick="customPrevImage()">&#10094;</span>
+            <span class="custom-arrow custom-next" onclick="customNextImage()">&#10095;</span>
+        </div>
+    </div>
+    
+    <script>
+      // Function to open the overlay with clicked image
+      function customOpenOverlay(imageSrc, title, subtitle) {
+          document.querySelector('.custom-overlay-image').src = imageSrc;
+          document.querySelector('.custom-overlay-text').innerHTML = '<h2>' + title + '</h2><p>' + subtitle + '</p>';
+          document.querySelector('.custom-overlay').style.display = 'flex';
+      }
+  
+      // Function to close the overlay
+      function customCloseOverlay() {
+          document.querySelector('.custom-overlay').style.display = 'none';
+      }
+  
+      // Function to navigate to the previous image
+      function customPrevImage() {
+          const images = document.querySelectorAll('.custom-image img');
+          let currentIndex = 0;
+          images.forEach((img, index) => {
+              if (img.src === document.querySelector('.custom-overlay-image').src) {
+                  currentIndex = index;
+              }
+          });
+          let prevIndex = currentIndex - 1;
+          if (prevIndex < 0) {
+              prevIndex = images.length - 1;
+          }
+          const prevImg = images[prevIndex];
+          const title = prevImg.getAttribute('data-custom-title');
+          const subtitle = prevImg.getAttribute('data-custom-subtitle');
+          customOpenOverlay(prevImg.src, title, subtitle);
+      }
+  
+      // Function to navigate to the next image
+      function customNextImage() {
+          const images = document.querySelectorAll('.custom-image img');
+          let currentIndex = 0;
+          images.forEach((img, index) => {
+              if (img.src === document.querySelector('.custom-overlay-image').src) {
+                  currentIndex = index;
+              }
+          });
+          let nextIndex = currentIndex + 1;
+          if (nextIndex >= images.length) {
+              nextIndex = 0;
+          }
+          const nextImg = images[nextIndex];
+          const title = nextImg.getAttribute('data-custom-title');
+          const subtitle = nextImg.getAttribute('data-custom-subtitle');
+          customOpenOverlay(nextImg.src, title, subtitle);
+      }
+  
+      // Add event listeners to images to open overlay
+      const customImages = document.querySelectorAll('.custom-image');
+      customImages.forEach(customImage => {
+          customImage.addEventListener('click', () => {
+              const customImg = customImage.querySelector('img');
+              const customTitle = customImg.getAttribute('data-custom-title');
+              const customSubtitle = customImg.getAttribute('data-custom-subtitle');
+              customOpenOverlay(customImg.src, customTitle, customSubtitle);
+          });
+      });
+  
+      // Add event listener to close button
+      document.querySelector('.custom-close-btn').addEventListener('click', customCloseOverlay);
+  
+      // Add event listeners to arrow buttons
+      document.querySelector('.custom-prev').addEventListener('click', customPrevImage);
+      document.querySelector('.custom-next').addEventListener('click', customNextImage);
+  </script>
+  
           <!-- 
             - #BLOG
           -->

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeric Veda Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+.course-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.level {
+    width: calc(33.33% - 20px);
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.level h2 {
+    font-size: 24px;
+}
+
+.level p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.teacher-training {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.faq {
+    margin-top: 40px;
+}
+
+.accordion-item {
+    margin-bottom: 20px;
+}
+
+.accordion-item-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.accordion-item-trigger h4 {
+    margin: 0;
+}
+
+.accordion-item-content {
+    display: none;
+}
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer ul {
+    margin-bottom: 20px;
+}
+
+.footer ul li {
+    display: inline;
+    margin-right: 10px;
+}
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Numeric Veda Course</h1>
+            <p>Unlock the power of Vedic Maths for students from 1st to 10th grade</p>
+        </header>
+        <section class="course-info">
+            <div class="level">
+                <h2>Level 1: Basic Vedic Maths for Grades 1-3</h2>
+                <p>Learn foundational concepts of Vedic Maths tailored for younger students.</p>
+                <button onclick="enroll()">Enroll Now</button>
+            </div>
+            <div class="level">
+                <h2>Level 2: Intermediate Vedic Maths for Grades 4-7</h2>
+                <p>Build on your Vedic Maths skills with more advanced techniques and applications.</p>
+                <button onclick="enroll()">Enroll Now</button>
+            </div>
+            <div class="level">
+                <h2>Level 3: Advanced Vedic Maths for Grades 8-10</h2>
+                <p>Master complex Vedic Maths methods and prepare for higher education.</p>
+                <button onclick="enroll()">Enroll Now</button>
+            </div>
+        </section>
+        <section class="teacher-training">
+            <h2>Teacher Training Courses</h2>
+            <p>Become a certified Vedic Maths instructor with our comprehensive teacher training program.</p>
+            <button onclick="enroll()">Enroll Now</button>
+        </section>
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion-item">
+                <div class="accordion-item-trigger" onclick="toggleAnswer(this)">
+                    <h4 class="accordion-heading-20">Why should I choose Vedic Maths?</h4>
+                    <div class="plus-icon w-icon-slider-right"></div>
+                </div>
+                <div class="accordion-item-content">
+                    <p class="faq-answer-16">Vedic Maths offers a faster and more intuitive approach to arithmetic, making math enjoyable and easier to understand for students of all ages.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-item-trigger" onclick="toggleAnswer(this)">
+                    <h4 class="accordion-heading-20">Is Vedic Maths suitable for all age groups?</h4>
+                    <div class="plus-icon w-icon-slider-right"></div>
+                </div>
+                <div class="accordion-item-content">
+                    <p class="faq-answer-16">Yes, Vedic Maths techniques can be adapted for students of any age, from primary school to adults.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-item-trigger" onclick="toggleAnswer(this)">
+                    <h4 class="accordion-heading-20">How can Vedic Maths benefit my child?</h4>
+                    <div class="plus-icon w-icon-slider-right"></div>
+                </div>
+                <div class="accordion-item-content">
+                    <p class="faq-answer-16">Vedic Maths enhances mental agility, improves problem-solving skills, and boosts confidence in mathematical abilities.</p>
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </section>
+        <section class="footer">
+            <ul role="list" class="list-2 w-list-unstyled">
+                <li>
+                    <a href="https://yourwebsite.com/about/" class="link-2">About</a>
+                </li>
+                <li>
+                    <a href="https://yourwebsite.com/terms-and-conditions/" class="link-2">Terms and Conditions</a>
+                </li>
+                <li>
+                    <a href="https://yourwebsite.com/privacy-policy/" class="link-2">Privacy Policy</a>
+                </li>
+            </ul>
+            <h1 class="heading-12">
+                <strong>©️ 2024 YourWebsite.com. All rights reserved.</strong>
+            </h1>
+            <div class="text-block-26">
+                For any support, please mail to <strong>support@yourwebsite.com.</strong>
+                Our support team will get back to you within 24 hours.
+            </div>
+        </section>
+    </div>
+    <script src="script.js">document.addEventListener("DOMContentLoaded", function() {
+    // Add click event listener to accordion triggers
+    const triggers = document.querySelectorAll(".accordion-item-trigger");
+    triggers.forEach(trigger => {
+        trigger.addEventListener("click", function() {
+            this.classList.toggle("active");
+            const content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    });
+});
+
+function toggleAnswer(trigger) {
+    const content = trigger.nextElementSibling;
+    trigger.classList.toggle("active");
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
+}
+
+function enroll() {
+    alert("You have successfully enrolled in the course!");
+    // You can add additional logic here, such as redirecting to a payment page or displaying a confirmation message.
+}
+</script>
+</body>
+</html>
